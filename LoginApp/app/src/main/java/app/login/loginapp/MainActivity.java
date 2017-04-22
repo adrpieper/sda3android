@@ -1,15 +1,13 @@
-package com.example.adrian.world.hello.helloworld;
+package app.login.loginapp;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-    //First commit
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Komentarz
         setContentView(R.layout.activity_main);
     }
 }
