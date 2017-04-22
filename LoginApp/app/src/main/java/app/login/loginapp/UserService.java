@@ -1,8 +1,6 @@
 package app.login.loginapp;
 
-/**
- * Created by Adrian on 2017-04-22.
- */
+
 
 public class UserService {
 
