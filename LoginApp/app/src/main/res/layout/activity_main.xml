@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.login.loginapp.MainActivity">
+
+    <EditText
+        android:id="@+id/editText_pn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter your login"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="70dp"
+        android:textSize="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="132dp" />
+
+    <EditText
+        android:id="@+id/editText2_pn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_pn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:ems="10"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        android:textSize="18dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <Button
+        android:id="@+id/button_pn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="305dp"
+        android:onClick="sendData"
+        android:layout_below="@+id/editText2_pn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="87dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_pn"
+        android:layout_alignRight="@+id/button_pn"
+        android:layout_below="@+id/button_pn"
+        android:layout_marginTop="38dp"
+        android:onClick="quit"
+        android:text="Qiut" />
+
+</RelativeLayout>
