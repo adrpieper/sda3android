@@ -1,30 +1,29 @@
 package app.login.loginapp;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    private EditText login;
-    private EditText password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EditText nameTextField = (EditText) findViewById(R.id.nameTextField);
+        EditText passwordTextField = (EditText) findViewById(R.id.passwordTextField);
+        Button loginButton = (Button) findViewById(R.id.loginButton);
 
-        input1 = (EditText) findViewById(R.id.editText1);
-        input2 = (EditText) findViewById(R.id.editText2);
-    }
-
-    public void wykonaj_metode(View v){
-        Intent i = new Intent(String.valueOf(getApplicationContext()));
-        i.putExtra("Parametr1", input1.getText().toString());
-        startActivity(i);
-
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
-

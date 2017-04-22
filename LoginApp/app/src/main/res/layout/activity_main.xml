@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="app.login.loginapp.MainActivity"
-    android:weightSum="1">
+    tools:context="app.login.loginapp.MainActivity">
 
     <TextView
-        android:id="@+id/textlogin"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="TextView" />
 
     <EditText
-        android:id="@+id/login"
+        android:id="@+id/nameTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -23,25 +22,21 @@
         android:text="Name" />
 
     <TextView
-        android:id="@+id/textpassword"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password" />
+        android:text="TextView" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="1dp"
-        android:onClick="wykonaj_metode"
-        android:text="OK" />
-
-
+        android:text="Button" />
 </LinearLayout>
