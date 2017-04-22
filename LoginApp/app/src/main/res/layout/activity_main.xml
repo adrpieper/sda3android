@@ -8,31 +8,33 @@
     tools:context="app.login.loginapp.MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <EditText
-        android:id="@+id/nameTextField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_width="705dp"
+        android:layout_height="100dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:id="@+id/password"
+        android:layout_width="705dp"
+        android:layout_height="100dp"
+        android:password="false"
+        android:text="Password" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:text="Password" />
 
     <Button
         android:id="@+id/loginButton"
@@ -40,17 +42,3 @@
         android:layout_height="wrap_content"
         android:text="Button" />
 </LinearLayout>
-=======
-    tools:context="app.login.loginapp.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
->>>>>>> dodanie plikow
