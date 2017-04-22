@@ -11,22 +11,21 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="24sp" />
+        android:text="TextView" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Name" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="24sp" />
+        android:text="TextView" />
 
     <EditText
         android:id="@+id/editText2"
@@ -34,10 +33,4 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="OK" />
 </LinearLayout>
