@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.button_one)
     protected Button buttonOne;
 
+//    private Map<String, String> map = new HashMap<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +38,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_one)
     public void buttonClick(View v) {
 
+//        map.put("admin", "admin");
+
         String login = "admin";
         String haslo = "admin";
+
 
         if (editTextOne.getText().toString().equals(login) && editTextTwo.getText().toString().equals(haslo)) {
 
