@@ -8,38 +8,35 @@
     tools:context="app.login.loginapp.MainActivity">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Name" />
+        android:layout_height="wrap_content"
+        android:text="@string/textview" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="705dp"
-        android:layout_height="100dp"
+        android:id="@+id/nameTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Login" />
+        android:text="@string/name" />
 
     <TextView
-        android:id="@+id/password"
-        android:layout_width="705dp"
-        android:layout_height="100dp"
-        android:password="false"
-        android:text="Password" />
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/passwordTextField"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="Password" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OK" />
-
+        android:text="@string/button" />
 </LinearLayout>
