@@ -8,6 +8,7 @@
     tools:context="app.login.loginapp.MainActivity">
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +16,15 @@
 
     <EditText
         android:id="@+id/editTextLogin"
+=======
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/nameTextField"
+>>>>>>> master
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -22,6 +32,7 @@
         android:text="Name" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,13 +40,26 @@
 
     <EditText
         android:id="@+id/editTextPwd"
+=======
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/passwordTextField"
+>>>>>>> master
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/button"
+=======
+        android:id="@+id/loginButton"
+>>>>>>> master
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />

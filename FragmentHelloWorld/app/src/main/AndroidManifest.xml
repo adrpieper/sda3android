@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.login.loginapp">
+    package="examples.sda.fragmenthelloworld">
 
     <application
         android:allowBackup="true"
@@ -16,11 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".Logged"></activity>
-=======
-        <activity android:name=".AppActivity"></activity>
->>>>>>> master
     </application>
 
 </manifest>
