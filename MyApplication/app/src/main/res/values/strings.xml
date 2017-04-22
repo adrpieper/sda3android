@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Maciej Sosnowski</string>
-    <string name="my_name">Maciej Sosnowski</string>
+    <string name="app_name">HelloWorld</string>
 </resources>
