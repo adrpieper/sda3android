@@ -11,15 +11,15 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/textview" />
+        android:text="TextView" />
 
     <EditText
-        android:id="@+id/nameTextField"
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/name" />
+        android:text="Name" />
 
     <TextView
         android:id="@+id/textView"
@@ -28,15 +28,9 @@
         android:text="TextView" />
 
     <EditText
-        android:id="@+id/passwordTextField"
+        android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button" />
 </LinearLayout>
