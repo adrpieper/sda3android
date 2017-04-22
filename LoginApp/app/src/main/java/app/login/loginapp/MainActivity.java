@@ -2,6 +2,7 @@ package app.login.loginapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,10 @@ public class MainActivity extends Activity {
 
                 if (service.checkUser(userName, password)) {
                     Toast.makeText(MainActivity.this, "Witaj " + userName, Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(MainActivity.this, AppActivity.class);
+                    intent.putExtra(AppActivity.LOGIN, userName);
+                    startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this, "Zły login lub hasło", Toast.LENGTH_LONG).show();
 
