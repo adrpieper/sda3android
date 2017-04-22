@@ -1,6 +1,7 @@
 package app.login.loginapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +30,8 @@ public class MainActivity extends Activity {
         if (v instanceof Button) {
             Button clickedButton = (Button) v;
             if (us.hashMapWithUsers.get(editText.getText().toString()).equals(editText3.getText().toString())) {
-                Toast.makeText(getApplicationContext(), editText.getText().toString() + " You log in to the system", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(i);
             }else {
                 Toast.makeText(getApplicationContext(), "Wrong Password or user unknown", Toast.LENGTH_SHORT).show();
             }
@@ -44,4 +46,6 @@ public class MainActivity extends Activity {
         us= new UsersService(getResources());
         us.load();
     }
+
+
 }
