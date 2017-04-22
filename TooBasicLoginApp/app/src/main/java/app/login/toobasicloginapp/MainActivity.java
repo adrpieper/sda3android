@@ -32,6 +32,5 @@ public class MainActivity extends Activity {
 
         if (true)
         Toast.makeText(this, "Witaj " + login_field.getText().toString(), Toast.LENGTH_LONG).show();
-//        Toast.makeText(this, "Telefon zrootowany, zgłoszenie na Policję dodane ", Toast.LENGTH_LONG).show();
     }
 }
