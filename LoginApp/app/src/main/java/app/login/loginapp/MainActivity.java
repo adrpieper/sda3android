@@ -23,17 +23,26 @@ public class MainActivity extends Activity {
     protected EditText password;
     @BindView(R.id.button)
     protected Button button;
+    UsersLogins ul = new UsersLogins();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        ul.createUsers();
     }
 
     @OnClick (R.id.button)
     public void send (View v){
-        Toast.makeText(this, "You logged in!", Toast.LENGTH_LONG).show();
+        if (login.equals(ul.checkUser())&& password.equals(ul.checkUser())) {
+
+            Toast.makeText(this, "You logged in!", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "Wrong login or password!", Toast.LENGTH_LONG).show();
+        }
 
     }
+
 }
