@@ -1,6 +1,7 @@
 package app.login.loginapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,10 +30,12 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (loginCheck(login.getText().toString(), password.getText().toString())){
+                if (loginCheck(login.getText().toString(), password.getText().toString())) {
                     Toast.makeText(MainActivity.this, "zalogowano", Toast.LENGTH_SHORT).show();
-
-                }else {
+                    Intent i = new Intent(getApplicationContext(), Logged.class);
+                    i.putExtra(Logged.LOGIN, login.getText().toString());
+                    startActivity(i);
+                } else {
                     Toast.makeText(MainActivity.this, "bledne dane", Toast.LENGTH_SHORT).show();
                 }
             }
