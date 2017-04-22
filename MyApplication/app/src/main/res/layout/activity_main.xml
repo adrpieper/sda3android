@@ -9,8 +9,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Rafal Strzyz"
         android:text="@string/name"
         android:textSize="48dp"
+=======
+        android:text="Rafal Strzyz"
+>>>>>>> Zamiana Hello world na Rafal Strzyz
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
