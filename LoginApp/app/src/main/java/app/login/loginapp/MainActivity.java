@@ -15,13 +15,21 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final EditText nameTextField = (EditText) findViewById(R.id.nameTextField);
-        EditText passwordTextField = (EditText) findViewById(R.id.passwordTextField);
+        final EditText passwordTextField = (EditText) findViewById(R.id.passwordTextField);
         Button loginButton = (Button) findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Witaj " + nameTextField.getText().toString(), Toast.LENGTH_LONG).show();
+                final String userName = nameTextField.getText().toString();
+                final String password = passwordTextField.getText().toString();
+
+                if (service.checkUser(userName, password)) {
+                    Toast.makeText(MainActivity.this, "Witaj " + userName, Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(MainActivity.this, "Zły login lub hasło", Toast.LENGTH_LONG).show();
+
+                }
 
             }
         });
