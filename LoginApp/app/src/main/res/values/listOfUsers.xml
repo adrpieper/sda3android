@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="UserAndPasswordMap">
+        <item>Przemek</item>
+        <item>aaaa</item>
+        <item>Michal</item>
+        <item>bbbb</item>
+
+    </string-array>
+</resources>
