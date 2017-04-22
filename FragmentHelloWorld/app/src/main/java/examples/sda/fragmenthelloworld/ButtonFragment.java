@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
+<<<<<<< HEAD
  * Created by RENT on 2017-04-22.
  */
 
-public class ButtonFragment extends Fragment{
+public class ButtonFragment extends Fragment {
 
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstate){
-    final Button button = new Button(getActivity());
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        final Button button = new Button(getActivity());
         button.setText("OK");
         return button;
-
     }
 }
