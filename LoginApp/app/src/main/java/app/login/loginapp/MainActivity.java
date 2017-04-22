@@ -27,16 +27,27 @@ public class MainActivity extends Activity {
 
     public void ok_click(View view) {
 
-
-        if(login.getText().toString().equals("admin") && password.getText().toString().equals("admin") ){
-            Intent i = new Intent(getApplicationContext(),Main2Activity.class);
-            startActivityForResult(i,1);
+        UserService us = new UserService();
+        UserLogin admin = new UserLogin("admin","admin");
+        UserLogin rafal = new UserLogin("rafal","rafal1");
+        us.addUser(admin);
+        us.addUser(rafal);
+        if (us.checkUser(login.getText().toString(), password.getText().toString())){
             Toast.makeText(getApplicationContext(), "Zalogowano", Toast.LENGTH_SHORT).show();
-        }else{
-            Intent i = new Intent(getApplicationContext(), Main3Activity.class);
-            startActivityForResult(i,1);
+        }
+        else {
             Toast.makeText(getApplicationContext(), "Bład", Toast.LENGTH_SHORT).show();
         }
+
+//        if(login.getText().toString().equals("admin") && password.getText().toString().equals("admin") ){
+//            Intent i = new Intent(getApplicationContext(),Main2Activity.class);
+//            startActivityForResult(i,1);
+//            Toast.makeText(getApplicationContext(), "Zalogowano", Toast.LENGTH_SHORT).show();
+//        }else{
+//            Intent i = new Intent(getApplicationContext(), Main3Activity.class);
+//            startActivityForResult(i,1);
+//            Toast.makeText(getApplicationContext(), "Bład", Toast.LENGTH_SHORT).show();
+//        }
 
 
 
