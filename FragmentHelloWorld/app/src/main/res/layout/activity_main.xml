@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="examples.sda.fragmenthelloworld.MainActivity">
+
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="examples.sda.fragmenthelloworld.ButtonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:layout="@layout/single_button_layout" />
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="examples.sda.fragmenthelloworld.ButtonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:layout="@layout/single_button_layout" />
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="examples.sda.fragmenthelloworld.ButtonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:layout="@layout/single_button_layout" />
 
     <fragment
         android:id="@+id/fragment"
         android:name="examples.sda.fragmenthelloworld.ButtonFragment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/single_button_layout" />
-</FrameLayout>
+
+</LinearLayout>
