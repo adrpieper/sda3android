@@ -25,12 +25,12 @@ public class DetailFragment extends Fragment {
     }
 
     public void showBasicData() {
-        titleTextView.setText("Podstawowe dane");
-        contentTextView.setText("Adrian Pieper");
+        titleTextView.setText("Podsrawowe dane");
+        contentTextView.setText("Maciej Sosnowski");
     }
 
     public void showDetailData() {
         titleTextView.setText("Szczegóły");
-        contentTextView.setText("Trener SDA");
+        contentTextView.setText("Student");
     }
 }
