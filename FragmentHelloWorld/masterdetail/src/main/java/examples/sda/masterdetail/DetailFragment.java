@@ -1,10 +1,8 @@
 package examples.sda.masterdetail;
 
-import android.app.Fragment;
-
 /**
- * Created by Adrian on 2017-04-22.
+ * Created by maciej.sosnowski on 24.04.2017.
  */
 
-public class DetailFragment extends Fragment {
+public class DetailFragment {
 }
