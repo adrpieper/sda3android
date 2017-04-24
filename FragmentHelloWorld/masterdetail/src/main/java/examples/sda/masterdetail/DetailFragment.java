@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 public class DetailFragment extends Fragment {
 
+    private TextView titleTextView;
+    private TextView contentTextView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_detail, container, false);
@@ -22,8 +25,12 @@ public class DetailFragment extends Fragment {
     }
 
     public void showBasicData() {
+        titleTextView.setText("Podstawowe dane");
+        contentTextView.setText("Adrian Pieper");
     }
 
     public void showDetailData() {
+        titleTextView.setText("Szczegóły");
+        contentTextView.setText("Trener SDA");
     }
 }
