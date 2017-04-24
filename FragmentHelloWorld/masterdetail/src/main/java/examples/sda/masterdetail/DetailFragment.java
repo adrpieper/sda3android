@@ -30,12 +30,13 @@ public class DetailFragment extends Fragment {
     public void showBasicData() {
 
         textView.setText("Jan Kowalski 25");
-
+        textView2.setText("Gdańsk ul. Partyzantów 122/1A");
 
     }
 
     public void showDetailData() {
 
-        textView2.setText("Gdańsk ul. Partyzantów 122/1A");
+        textView.setText("Politechnika Gdańska");
+        textView2.setText("Oceanotechnika. Budowa jachtów.");
     }
 }
