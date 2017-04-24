@@ -26,11 +26,11 @@ public class DetailFragment extends Fragment {
 
     public void showBasicData() {
         titleTextView.setText(R.string.basic_data);
-        contentTextView.setText("Adrian Pieper");
+        contentTextView.setText("Rafal Strzyz");
     }
 
     public void showDetailData() {
         titleTextView.setText(R.string.detail_data);
-        contentTextView.setText("Trener SDA");
+        contentTextView.setText("Student");
     }
 }
