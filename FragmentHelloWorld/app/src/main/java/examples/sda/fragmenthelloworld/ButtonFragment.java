@@ -7,9 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-/**
- * Created by Adrian on 2017-04-22.
- */
 
 public class ButtonFragment extends Fragment {
 

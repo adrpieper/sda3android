@@ -7,11 +7,11 @@
         android:id="@+id/basicDataButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/basic_data" />
+        android:text="Button" />
 
     <Button
         android:id="@+id/detailDataButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/detail_data" />
+        android:text="Button" />
 </LinearLayout>
