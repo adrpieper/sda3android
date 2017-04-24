@@ -8,15 +8,15 @@
     tools:layout_editor_absoluteX="0dp">
 
     <fragment
-        android:id="@+id/fragment2"
-        android:name="examples.sda.masterdetail.DetailFragment"
+        android:id="@+id/fragment"
+        android:name="examples.sda.masterdetail.MasterFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <fragment
-        android:id="@+id/fragment"
-        android:name="examples.sda.masterdetail.MasterFragment"
+        android:id="@+id/fragment2"
+        android:name="examples.sda.masterdetail.DetailFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
