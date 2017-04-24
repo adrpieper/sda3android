@@ -9,10 +9,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="examples.sda.masterdetail.MainActivity">
+    tools:context="examples.sda.masterdetail.MainActivity"
+    android:background="#558b2f">
 
     <fragment
-        android:id="@+id/fragment3"
+        android:id="@+id/masterFragment"
         android:name="examples.sda.masterdetail.MasterFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -20,7 +21,7 @@
         tools:layout="@layout/fragment_master" />
 
     <fragment
-        android:id="@+id/fragment4"
+        android:id="@+id/detailFragment"
         android:name="examples.sda.masterdetail.DetailFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
