@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-        showBasicData();
+        //showBasicData();
 
     }
 
