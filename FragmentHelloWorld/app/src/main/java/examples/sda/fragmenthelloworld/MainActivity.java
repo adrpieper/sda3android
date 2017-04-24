@@ -1,12 +1,15 @@
 package examples.sda.fragmenthelloworld;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 
-    
+
 
 
 
@@ -19,12 +22,15 @@ public class MainActivity extends Activity {
 
 
 
+
+
+
+
+
     }
 
 
-
-
-
-
-
+    public void showMessage() {
+        Toast.makeText(this,"Hej",Toast.LENGTH_SHORT).show();
+    }
 }

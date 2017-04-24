@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
 
 
-        users.put("admin", "admin");
+
 
 
     }
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
             String loginString = users.get(login.getText().toString());
             String passString = pass.getText().toString();
 
-
+        users.put("admin", "admin");
         if (!passString.equals(loginString)) {
 
             Toast.makeText(getApplicationContext(), "Podaj prawidłowy login/hasło", Toast.LENGTH_LONG).show();
@@ -56,8 +56,8 @@ public class MainActivity extends Activity {
 
             Toast.makeText(this, "Zalogowano użytkownika " + login.getText().toString(), Toast.LENGTH_LONG).show();
 
-//            Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+            startActivity(intent);
 
         }
 
