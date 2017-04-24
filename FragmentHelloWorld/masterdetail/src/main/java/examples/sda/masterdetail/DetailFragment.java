@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**ne
- * Created by Adrian on 2017-04-22.
- */
+
 
 public class DetailFragment extends Fragment {
 
@@ -19,18 +17,20 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_detail, container, false);
+
         titleTextView = (TextView) view.findViewById(R.id.titleTextView);
         contentTextView = (TextView) view.findViewById(R.id.contentTextView);
+
         return view;
     }
 
     public void showBasicData() {
         titleTextView.setText("Podstawowe dane");
-        contentTextView.setText("Adrian Pieper");
+        contentTextView.setText("Macije G.");
     }
 
     public void showDetailData() {
         titleTextView.setText("Szczegóły");
-        contentTextView.setText("Trener SDA");
+        contentTextView.setText("Twoj Pan!");
     }
 }
