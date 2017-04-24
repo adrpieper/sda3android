@@ -4,14 +4,15 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/basicButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Basic info" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/detailsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Details info" />
+
 </LinearLayout>

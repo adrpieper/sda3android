@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_master" />
 
     <fragment
-        android:id="@+id/fragment2"
+        android:id="@+id/detailFragment"
         android:name="examples.sda.masterdetail.DetailFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
