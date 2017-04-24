@@ -15,7 +15,6 @@
         android:id="@+id/data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="24sp"
-        tools:text="Twoje dane" />
+        android:text="Twoje dane"
+        android:textSize="24sp" />
 </LinearLayout>
