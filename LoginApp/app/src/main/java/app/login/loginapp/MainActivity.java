@@ -9,7 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static android.R.id.input;
+
 public class MainActivity extends Activity {
+
+    private EditText input1;
+    private EditText input2;
+
 
     private UserService service = new UserService();
 
@@ -34,10 +40,14 @@ public class MainActivity extends Activity {
                     startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this, "Zły login lub hasło", Toast.LENGTH_LONG).show();
-
                 }
+                Intent i = new Intent(getApplicationContext(), SecondActivity.class);
 
+                i.putExtra("userName", input1.getText().toString());
+                i.putExtra("password", input2.getText().toString());
+
+                startActivity(i);
             }
         });
-    }
-}
+
+}}
