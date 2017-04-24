@@ -16,6 +16,7 @@ public class ButtonFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.single_button_layout, container, false);
         final Button button = new Button(getActivity());
         button.setText("OK");
 
