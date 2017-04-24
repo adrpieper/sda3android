@@ -6,22 +6,31 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-    private DetailFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-        //showBasicData();
+        showBasicData();
     }
 
     public void showBasicData() {
-        fragment.showBasicData();
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
+        }
+        else {
+            //start new Activity
+        }
     }
 
     public void showDetailData() {
-        fragment.showDetailData();
-
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showDetailData();
+        }
+        else {
+            //start new Activity
+        }
     }
 }
