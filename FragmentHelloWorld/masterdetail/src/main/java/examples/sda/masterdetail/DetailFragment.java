@@ -25,7 +25,7 @@ public class DetailFragment extends Fragment {
     }
 
     public void showBasicData() {
-        titleTextView.setText("Podsrawowe dane");
+        titleTextView.setText("Podstawowe dane");
         contentTextView.setText("Maciej Sosnowski");
     }
 
