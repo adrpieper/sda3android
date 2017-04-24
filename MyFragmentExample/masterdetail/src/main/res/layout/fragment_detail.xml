@@ -7,6 +7,14 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text=""
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/text_content1" />
+        android:textSize="18sp" />
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent" tools:context="examples.sda.masterdetail.MainActivity">
 
     <fragment
-        android:id="@+id/fragment"
+        android:id="@+id/master_fragment"
         android:name="examples.sda.masterdetail.MasterFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -14,7 +14,7 @@
         tools:layout="@layout/fragment_master" />
 
     <fragment
-        android:id="@+id/fragment2"
+        android:id="@+id/detail_fragment"
         android:name="examples.sda.masterdetail.DetailFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
