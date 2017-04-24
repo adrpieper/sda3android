@@ -17,4 +17,10 @@ public class DetailFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_detail, container, false);
         return view;
     }
+
+    public void showBasicData() {
+    }
+
+    public void showDetailData() {
+    }
 }
