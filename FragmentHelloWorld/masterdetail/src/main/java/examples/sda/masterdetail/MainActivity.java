@@ -14,4 +14,12 @@ public class MainActivity extends Activity {
 
         fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
     }
+
+    public void showBasicData() {
+        fragment.showBasicData();
+    }
+
+    public void showDetailData() {
+        fragment.showDetailData();
+    }
 }
