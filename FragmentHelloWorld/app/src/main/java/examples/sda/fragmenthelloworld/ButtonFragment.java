@@ -13,13 +13,23 @@ import android.widget.Button;
 
 public class ButtonFragment extends Fragment {
 
+    //Wczytuje z pliku pod zimienna view widok i go oprogramowuje
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        //żeby wczytać plik potrzebujemy inflater, można go stworzyć poprzez getContex
+
         final Button button = new Button(getActivity());
         button.setText("OK");
 
+        //ten fragment znajduje się w tej aktywności, zapewnia nam komunikacje, poktrzebbujemy referencję z klasy Main Activity
+        //wszystkie zmienne muszą być final
 
         final MainActivity mainActivity = (MainActivity) getActivity();
+
+        //po wciśnięciu pokaż wiadomość
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
