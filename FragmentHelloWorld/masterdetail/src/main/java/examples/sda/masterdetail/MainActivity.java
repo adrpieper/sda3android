@@ -1,4 +1,4 @@
-package com.example.adrian.world.hello.helloworld;
+package examples.sda.masterdetail;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Komentarz
         setContentView(R.layout.activity_main);
     }
 }
