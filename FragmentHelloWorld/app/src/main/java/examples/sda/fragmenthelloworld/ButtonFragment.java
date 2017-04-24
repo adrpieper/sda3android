@@ -15,8 +15,10 @@ public class ButtonFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.single_button_layout, container,false);
-        Button button = (Button) view.findViewById(R.id.button);
+        View view = inflater.inflate(R.layout.single_button_layout, container, false);
+
+        Button button = (Button) view.findViewById(R.id.okButton);
+
         final MainActivity mainActivity = (MainActivity) getActivity();
         button.setOnClickListener(new View.OnClickListener() {
             @Override

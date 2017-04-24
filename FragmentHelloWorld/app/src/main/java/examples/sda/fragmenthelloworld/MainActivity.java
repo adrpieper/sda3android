@@ -13,6 +13,6 @@ public class MainActivity extends Activity {
     }
 
     public void showMessage() {
-        Toast.makeText(this,"Wiadomosc", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Hello World!", Toast.LENGTH_SHORT).show();
     }
 }
