@@ -5,7 +5,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ButtonInterface {
 
     private DetailFragment fragment;
 
@@ -17,21 +17,23 @@ public class MainActivity extends Activity {
         // showBasicData();
     }
 
+    @Override
     public void showBasicData() {
         //  DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
         } else {
-            showDetailsInDetailsActivity(0);
+            showDetailsInDetailsActivity(DetailsActivity.BASIC);
         }
     }
 
+    @Override
     public void showDetailsData() {
         //   DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showDetailsData();
         } else {
-            showDetailsInDetailsActivity(1);
+            showDetailsInDetailsActivity(DetailsActivity.DETAILS);
         }
     }
 

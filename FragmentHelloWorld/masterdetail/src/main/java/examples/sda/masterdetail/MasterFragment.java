@@ -17,18 +17,18 @@ public class MasterFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_master, container, false);
         Button basicButton = (Button) view.findViewById(R.id.basicButton);
         Button detailsButton = (Button) view.findViewById(R.id.detailsButton);
-        final MainActivity mainActivity = (MainActivity) getActivity();
+        final ButtonInterface buttonInterface = (ButtonInterface) getActivity();
 
         basicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showBasicData();
+                buttonInterface.showBasicData();
             }
         });
         detailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showDetailsData();
+                buttonInterface.showDetailsData();
             }
         });
 
