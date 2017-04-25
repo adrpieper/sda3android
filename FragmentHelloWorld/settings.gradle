@@ -1,1 +1,1 @@
-include ':app', ':masterdetail', ':masterdetail'
+include ':app', ':masterdetail', ':masterdetail', ':calculator'
