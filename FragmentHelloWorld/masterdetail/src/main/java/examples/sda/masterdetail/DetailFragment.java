@@ -26,18 +26,21 @@ public class DetailFragment extends Fragment {
         title = (TextView) view.findViewById(R.id.title);
         desc = (TextView) view.findViewById(R.id.description);
 
-        final MainActivity mainActivity = (MainActivity) getActivity();
+
 
 
         return view;
     }
 
     public void showBasicInfo() {
+
         title.setText("Podstawowe dane");
 
     }
 
     public void showDetailInfo() {
+
+
         desc.setText("Opis");
 
     }

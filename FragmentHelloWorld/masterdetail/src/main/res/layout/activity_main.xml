@@ -24,7 +24,6 @@
         android:layout_height="match_parent"
 
 
-
-        tools:layout="@layout/fragment_detail"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_detail" />
 </LinearLayout>
