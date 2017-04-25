@@ -5,4 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="examples.sda.calculator.MainActivity">
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="examples.sda.calculator.ButtonsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_buttons" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
 </LinearLayout>
