@@ -7,6 +7,8 @@ import android.os.Bundle;
 public class MainActivity extends Activity {
 
 
+    final static int BASIC = 0;
+    final static int DETAIL =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,9 @@ public class MainActivity extends Activity {
         if(fragment != null && fragment.isInLayout() ) {
             fragment.showBasicData();
         }else {
-            passOn(0);
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("message",BASIC);
+            startActivity(intent);
 
         }
     }
@@ -34,13 +38,12 @@ public class MainActivity extends Activity {
         if(fragment != null && fragment.isInLayout() ) {
              fragment.showDetailInfo();
         }else {
-            // start new activity
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("message",DETAIL);
+            startActivity(intent);
         }
     }
 
 
-    public void passOn (int n) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        startActivity(intent);
-    }
+
 }

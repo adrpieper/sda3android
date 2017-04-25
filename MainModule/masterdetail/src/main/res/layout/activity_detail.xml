@@ -6,14 +6,11 @@
     android:layout_height="match_parent"
     tools:context="examples.sda.masterdetail.DetailActivity">
 
-    <TextView
-        android:id="@+id/textView_sec_ac"
+    <fragment
+        android:id="@+id/fragment7_text"
+        android:name="examples.sda.masterdetail.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="42dp" />
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_detail" />
 </RelativeLayout>
