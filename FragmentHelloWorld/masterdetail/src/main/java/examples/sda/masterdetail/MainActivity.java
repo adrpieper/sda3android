@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ButtonsInterface {
 
 
     private DetailFragment fragment;
@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Override
     public void showBasicData() {
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Override
     public void showDetailData() {
         if (fragment != null && fragment.isInLayout()) {
             fragment.showDetailData();
