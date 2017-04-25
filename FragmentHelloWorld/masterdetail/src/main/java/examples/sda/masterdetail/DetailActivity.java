@@ -2,6 +2,7 @@ package examples.sda.masterdetail;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class DetailActivity extends Activity {
 
@@ -14,15 +15,10 @@ public class DetailActivity extends Activity {
         setContentView(R.layout.activity_detail);
 
         final int data = getIntent().getIntExtra("data", BASIC);
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-
         if (data == BASIC) {
-            fragment.showBasicData();
-
-        } else if (data == DETAIL) {
-            fragment.showDetailData();
-
+            //showBasic
+        }else if (data == DETAIL) {
+            //showDetails
         }
     }
 }
-
