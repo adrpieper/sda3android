@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:id="@+id/currencyCalculator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/currencyCalculatorText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kalkulator Walut" />
+        android:text="Currency Calculator" />
+
+    <TextView
+        android:id="@+id/plnTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PLN" />
+
+    <EditText
+        android:id="@+id/firstValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/euroTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Euro" />
+
+    <TextView
+        android:id="@+id/calculatedValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
 </LinearLayout>

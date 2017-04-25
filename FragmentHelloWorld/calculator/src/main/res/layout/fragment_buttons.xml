@@ -4,14 +4,14 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/currenencyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Currency Calculator" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/investmentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Investment Form" />
 </LinearLayout>
