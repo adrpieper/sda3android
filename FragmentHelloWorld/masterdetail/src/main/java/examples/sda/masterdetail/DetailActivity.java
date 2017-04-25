@@ -14,10 +14,15 @@ public class DetailActivity extends Activity {
         setContentView(R.layout.activity_detail);
 
         final int data = getIntent().getIntExtra("data", BASIC);
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+
         if (data == BASIC) {
+            fragment.showBasicData();
 
         } else if (data == DETAIL) {
+            fragment.showDetailData();
 
         }
     }
 }
+
