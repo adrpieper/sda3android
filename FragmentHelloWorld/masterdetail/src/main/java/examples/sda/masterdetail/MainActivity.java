@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 
     public void showBasicData() {
         DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
         }
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
 
     public void showDetailData() {
         DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+
         if (fragment != null && fragment.isInLayout()) {
             fragment.showDetailData();
         }
