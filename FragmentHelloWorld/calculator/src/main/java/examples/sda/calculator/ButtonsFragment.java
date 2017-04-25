@@ -1,8 +1,10 @@
 package examples.sda.calculator;
 
+import android.app.Fragment;
+
 /**
- * Created by maciej.sosnowski on 25.04.2017.
+ * Created by Adrian on 2017-04-25.
  */
 
-public class ButtonsFragment {
+public class ButtonsFragment extends Fragment {
 }
