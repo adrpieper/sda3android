@@ -2,6 +2,7 @@ package examples.sda.masterdetail;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class DetailActivity extends Activity {
 
@@ -12,5 +13,12 @@ public class DetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        final int data = getIntent().getIntExtra("data", BASIC);
+        if (data == BASIC) {
+            //showBasic
+        }else if (data == DETAIL) {
+            //showDetails
+        }
     }
 }
