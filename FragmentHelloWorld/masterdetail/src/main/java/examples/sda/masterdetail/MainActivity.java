@@ -4,18 +4,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ButtonsInterface {
 
+
+    private DetailFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showBasicData();
+        fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
+        }
     }
 
+    @Override
     public void showBasicData() {
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
         }
@@ -26,8 +32,8 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Override
     public void showDetailData() {
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showDetailData();
         }
