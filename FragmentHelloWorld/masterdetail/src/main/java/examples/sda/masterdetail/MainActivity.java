@@ -7,15 +7,20 @@ import android.os.Bundle;
 public class MainActivity extends Activity {
 
 
+    private DetailFragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showBasicData();
+        fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
+        }
     }
 
     public void showBasicData() {
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
         }
@@ -27,7 +32,6 @@ public class MainActivity extends Activity {
     }
 
     public void showDetailData() {
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showDetailData();
         }
