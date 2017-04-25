@@ -16,21 +16,16 @@ public class MasterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_master, container, false);
-
-        Button button2 = (Button) view.findViewById(R.id.button2);
-        Button button = (Button) view.findViewById(R.id.button);
-
+        Button basicDataButton = (Button) view.findViewById(R.id.basicDataButton);
+        Button detailDataButton = (Button) view.findViewById(R.id.detailDataButton);
         final MainActivity mainActivity = (MainActivity) getActivity();
-
-        button2.setOnClickListener(new View.OnClickListener() {
+        basicDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showBasicData();
-
             }
         });
-
-        button.setOnClickListener(new View.OnClickListener() {
+        detailDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showDetailData();

@@ -6,38 +6,35 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-    //private DetailFragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //fragment = (DetailFragment)
+        showBasicData();
     }
 
     public void showBasicData() {
-        //fragment.showBasicData();
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
-
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
-        } else {
-            Intent i = new Intent(this, DetailActivity.class);
-            i.putExtra("basic", 0);
-            startActivity(i);
+        }
+        else {
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("data", DetailActivity.BASIC);
+            startActivity(intent);
         }
     }
 
     public void showDetailData() {
-        //fragment.showDetailData();
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
-
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.showDetailData();
-        } else {
-
-            Intent i = new Intent(this, DetailActivity.class);
-            i.putExtra("detail", );
-            startActivity(i);
+        }
+        else {
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("data", DetailActivity.DETAIL);
+            startActivity(intent);
         }
     }
 }
