@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 public class DetailFragment extends Fragment {
 
-    private TextView textView;
-    private TextView textView2;
+    protected TextView textView;
+    protected TextView textView2;
 
 
     @Override
@@ -38,5 +38,14 @@ public class DetailFragment extends Fragment {
 
         textView.setText("Politechnika Gdańska");
         textView2.setText("Oceanotechnika. Budowa jachtów.");
+    }
+
+    public String[] getDetailData() {
+
+        String[] name = new String[2];
+
+        name[0] = textView.getText().toString();
+        name[1] = textView2.getText().toString();
+        return name;
     }
 }

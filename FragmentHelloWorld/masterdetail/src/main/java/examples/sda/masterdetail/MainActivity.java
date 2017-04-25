@@ -1,25 +1,46 @@
 package examples.sda.masterdetail;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-    private DetailFragment fragment;
+    //private DetailFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
-        //showBasicData();
+
+        //fragment = (DetailFragment)
+
     }
 
     public void showBasicData() {
-        fragment.showBasicData();
+        //fragment.showBasicData();
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
+
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
+        } else {
+//            Intent i = new Intent(getApplicationContext(), DetailActivity.class );
+//            i.putExtra("basic", );
+//            startActivity(i);
+        }
     }
 
     public void showDetailData() {
-        fragment.showDetailData();
+        //fragment.showDetailData();
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
+
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showDetailData();
+        } else {
+
+            Intent i = new Intent(getApplicationContext(), DetailActivity.class );
+            i.putExtra("detail", fragment.getDetailData());
+            startActivity(i);
+        }
     }
 }
