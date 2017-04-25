@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     tools:context="examples.sda.masterdetail.MainActivity">
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="examples.sda.masterdetail.DetailFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@layout/fragment_detail" />
-
-    <fragment
-        android:id="@+id/fragment"
         android:name="examples.sda.masterdetail.MasterFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         tools:layout="@layout/fragment_master" />
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="examples.sda.masterdetail.DetailFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_detail" />
 </LinearLayout>

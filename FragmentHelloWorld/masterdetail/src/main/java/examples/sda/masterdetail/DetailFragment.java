@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**ne
+ * Created by Adrian on 2017-04-22.
+ */
+
 public class DetailFragment extends Fragment {
 
     private TextView titleTextView;
@@ -19,10 +23,14 @@ public class DetailFragment extends Fragment {
         contentTextView = (TextView) view.findViewById(R.id.contentTextView);
         return view;
     }
+
     public void showBasicData() {
-        titleTextView.setText("Podstawowe dane");
-        contentTextView.setText("Pawel");
-    }    public void showDetailData() {
-        titleTextView.setText("Szczegóły");
-        contentTextView.setText("Student");
-    }}
+        titleTextView.setText(R.string.basic_data);
+        contentTextView.setText("Adrian Pieper");
+    }
+
+    public void showDetailData() {
+        titleTextView.setText(R.string.detail_data);
+        contentTextView.setText("Trener SDA");
+    }
+}
