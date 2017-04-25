@@ -13,14 +13,25 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-        showBasicData();
+        //showBasicData();
     }
 
     public void showBasicData() {
-        fragment.showBasicData();
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.fragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
+        } else {
+
+        }
+
     }
 
     public void showDetailsData() {
-        fragment.showDetailsData();
+        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showDetailsData();
+        } else {
+           
+        }
     }
 }

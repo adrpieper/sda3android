@@ -31,7 +31,6 @@ public class MasterFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 }
