@@ -2,10 +2,10 @@
 <resources>
     <string-array name="hashmapExchangeRates">
         <item>euro</item>
-        <item>4,23</item>
+        <item>4.23</item>
         <item>usa</item>
-        <item>3,88</item>
+        <item>3.88</item>
         <item>gbp</item>
-        <item>4,98</item>
+        <item>4.98</item>
     </string-array>
 </resources>

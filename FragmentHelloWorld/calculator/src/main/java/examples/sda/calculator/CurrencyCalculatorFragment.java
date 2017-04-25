@@ -19,9 +19,9 @@ import java.util.HashMap;
 public class CurrencyCalculatorFragment extends Fragment {
 
     private TextView calculatedNumber;
-    Resources resources = this.getResources();
 
-    private HashMap<String, Double> map;
+
+    public HashMap<String, Double> map;
 
 
     @Override
@@ -34,13 +34,14 @@ public class CurrencyCalculatorFragment extends Fragment {
         calculatedNumber = (TextView) view.findViewById(R.id.calculatedValue);
         Button calculateButton = (Button) view.findViewById(R.id.calculateButton);
 
-        creatingHashMap();
+
+
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 double numberFromEditText = Double.parseDouble(firstValue.getText().toString());
-                String calculatedExchangeRate = new Double(calculateExchangeRate(numberFromEditText, "euro", map)).toString();
+                String calculatedExchangeRate = new Double(calculateExchangeRate(numberFromEditText, "euro", creatingHashMap())).toString();
                 calculatedNumber.setText(calculatedExchangeRate);
             }
         });
@@ -55,6 +56,7 @@ public class CurrencyCalculatorFragment extends Fragment {
     }
 
     public HashMap<String, Double> creatingHashMap() {
+        Resources resources = this.getResources();
         String[] hashmapData = resources.getStringArray(R.array.hashmapExchangeRates);
         map = new HashMap<String, Double>();
         for (int i = 0; i < hashmapData.length; i = i + 2) {
