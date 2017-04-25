@@ -1,55 +1,47 @@
 package app.login.loginapp;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import static android.R.id.input;
 
 public class MainActivity extends Activity {
 
-    private EditText input1;
-    private EditText input2;
-
-
-    private UserService service = new UserService();
+//    private TextView textView;
+//    private TextView textView2;
+//    private EditText editText;
+//    private EditText editText2;
+//    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final EditText nameTextField = (EditText) findViewById(R.id.nameTextField);
-        final EditText passwordTextField = (EditText) findViewById(R.id.passwordTextField);
-        Button loginButton = (Button) findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+
+
+        final Button button = (Button)findViewById(R.id.button);
+        final EditText editText = (EditText)findViewById(R.id.editText);
+        final EditText editText2 = (EditText)findViewById(R.id.editText2);
+
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(editText.getText().toString().equals("admin") &&
+                        editText2.getText().toString().equals("admin")) {
+                    Toast.makeText(getApplicationContext(),
+                            "witaj królu",Toast.LENGTH_SHORT).show();
 
-
-                final String userName = nameTextField.getText().toString();
-                final String password = passwordTextField.getText().toString();
-
-                if (service.checkUser(userName, password)) {
-                    Toast.makeText(MainActivity.this, "Witaj " + userName, Toast.LENGTH_LONG).show();
-
-                    Intent intent = new Intent(MainActivity.this, AppActivity.class);
-                    intent.putExtra(AppActivity.LOGIN, userName);
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    intent.putExtra(Main2Activity.LOGIN, );
                     startActivity(intent);
-                }else {
-                    Toast.makeText(MainActivity.this, "Zły login lub hasło", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "zły login",Toast.LENGTH_SHORT).show();
+                    }
                 }
-                Intent i = new Intent(getApplicationContext(), SecondActivity.class);
-
-                i.putExtra("userName", input1.getText().toString());
-                i.putExtra("password", input2.getText().toString());
-
-                startActivity(i);
-            }
         });
-
-}}
+    }
+}
