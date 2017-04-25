@@ -7,7 +7,7 @@
     tools:context="examples.sda.masterdetail.DetailsActivity">
 
     <fragment
-        android:id="@+id/fragment3"
+        android:id="@+id/detailsActivityFragment"
         android:name="examples.sda.masterdetail.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

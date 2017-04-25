@@ -18,6 +18,7 @@ public class MasterFragment extends Fragment {
         Button basicButton = (Button) view.findViewById(R.id.basicButton);
         Button detailsButton = (Button) view.findViewById(R.id.detailsButton);
         final MainActivity mainActivity = (MainActivity) getActivity();
+
         basicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
