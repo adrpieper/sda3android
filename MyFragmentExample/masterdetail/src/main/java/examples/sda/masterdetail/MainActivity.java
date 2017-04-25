@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
             fragment.showDetailedData();
         } else {
 
+            Intent i = new Intent(this, DetailActivity.class);
+            i.putExtra("shown", DetailActivity.DETAIL);
+            startActivity(i);
         }
     }
 }
