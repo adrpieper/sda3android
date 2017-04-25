@@ -1,7 +1,6 @@
 package examples.sda.masterdetail;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -23,6 +22,7 @@ public class MainActivity extends Activity {
         }
         else {
             Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("data", DetailActivity.BASIC);
             startActivity(intent);
         }
     }
@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         }
         else {
             Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("data", DetailActivity.DETAIL);
             startActivity(intent);
         }
     }

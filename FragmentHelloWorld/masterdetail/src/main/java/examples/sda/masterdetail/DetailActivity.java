@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 public class DetailActivity extends Activity {
 
+    public static final int BASIC = 0;
+    public static final int DETAIL = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
