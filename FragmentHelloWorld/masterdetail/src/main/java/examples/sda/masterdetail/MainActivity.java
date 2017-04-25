@@ -2,6 +2,7 @@ package examples.sda.masterdetail;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 
@@ -23,7 +24,8 @@ public class MainActivity extends Activity {
             fragment.showBasicData();
         }
         else {
-            //start new Activity
+            Intent intent = new Intent(this, DetailActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -33,7 +35,8 @@ public class MainActivity extends Activity {
             fragment.showDetailData();
         }
         else {
-            //start new Activity
+            Intent intent = new Intent(this, DetailActivity.class);
+            startActivity(intent);
         }
     }
 
