@@ -7,14 +7,11 @@ import android.os.Bundle;
 public class MainActivity extends Activity {
 
     //private DetailFragment fragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //fragment = (DetailFragment)
-
     }
 
     public void showBasicData() {
@@ -24,9 +21,9 @@ public class MainActivity extends Activity {
         if (fragment != null && fragment.isInLayout()) {
             fragment.showBasicData();
         } else {
-//            Intent i = new Intent(getApplicationContext(), DetailActivity.class );
-//            i.putExtra("basic", );
-//            startActivity(i);
+            Intent i = new Intent(this, DetailActivity.class);
+            i.putExtra("basic", 0);
+            startActivity(i);
         }
     }
 
@@ -38,8 +35,8 @@ public class MainActivity extends Activity {
             fragment.showDetailData();
         } else {
 
-            Intent i = new Intent(getApplicationContext(), DetailActivity.class );
-            i.putExtra("detail", fragment.getDetailData());
+            Intent i = new Intent(this, DetailActivity.class);
+            i.putExtra("detail", );
             startActivity(i);
         }
     }

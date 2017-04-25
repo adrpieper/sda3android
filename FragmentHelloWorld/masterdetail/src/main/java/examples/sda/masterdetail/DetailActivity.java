@@ -14,10 +14,10 @@ public class DetailActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        if(getIntent().hasExtra("detail")){
-            //DetailFragment frag = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
-            getIntent().getStringExtra("detail");
-            //frag.showBasicData();
-        }
+//        if(getIntent().hasExtra("detail")){
+//            //DetailFragment frag = (DetailFragment) getFragmentManager().findFragmentById(R.id.DetailFragment);
+//            getIntent().getStringExtra("detail");
+//            //frag.showBasicData();
+//        }
     }
 }
