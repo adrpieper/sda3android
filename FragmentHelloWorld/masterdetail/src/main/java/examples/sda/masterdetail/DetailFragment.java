@@ -7,9 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**ne
- * Created by Adrian on 2017-04-22.
- */
 
 public class DetailFragment extends Fragment {
 
@@ -28,11 +25,11 @@ public class DetailFragment extends Fragment {
 
     public void showBasicData() {
         titleTextView.setText(R.string.basic_data);
-        contentTextView.setText("Adrian Pieper");
+        contentTextView.setText("Pawel F");
     }
 
     public void showDetailData() {
         titleTextView.setText(R.string.detail_data);
-        contentTextView.setText("Trener SDA");
+        contentTextView.setText("Uczen SDA");
     }
 }
