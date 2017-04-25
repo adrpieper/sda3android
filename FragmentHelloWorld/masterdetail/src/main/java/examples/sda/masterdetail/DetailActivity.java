@@ -12,5 +12,12 @@ public class DetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        final int data = getIntent().getIntExtra("data", BASIC);
+        if (data == BASIC) {
+
+        } else if (data == DETAIL) {
+
+        }
     }
 }
