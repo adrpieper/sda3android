@@ -1,6 +1,7 @@
 package app.login.loginapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,44 +9,35 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class MainActivity extends Activity {
 
-    UsersService us;
-
-    @BindView(R.id.button)
-    protected Button button;
-
-    @BindView(R.id.editText)
-    protected EditText editText;
-
-    @BindView(R.id.editText3)
-    protected EditText editText3;
-
-    @OnClick(R.id.button)
-    protected void onButtonClickMethod(View v) {
-        if (v instanceof Button) {
-            Button clickedButton = (Button) v;
-            if (us.hashMapWithUsers.get(editText.getText().toString()).equals(editText3.getText().toString())) {
-                Intent i = new Intent(MainActivity.this, Main2Activity.class);
-                startActivity(i);
-            }else {
-                Toast.makeText(getApplicationContext(), "Wrong Password or user unknown", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+    private UserService service = new UserService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        us= new UsersService(getResources());
-        us.load();
+        final EditText nameTextField = (EditText) findViewById(R.id.nameTextField);
+        final EditText passwordTextField = (EditText) findViewById(R.id.passwordTextField);
+        Button loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String userName = nameTextField.getText().toString();
+                final String password = passwordTextField.getText().toString();
+
+                if (service.checkUser(userName, password)) {
+                    Toast.makeText(MainActivity.this, "Witaj " + userName, Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(MainActivity.this, AppActivity.class);
+                    intent.putExtra(AppActivity.LOGIN, userName);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(MainActivity.this, "Zły login lub hasło", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
     }
-
-
 }

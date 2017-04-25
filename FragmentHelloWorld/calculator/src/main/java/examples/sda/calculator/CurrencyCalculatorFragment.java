@@ -1,8 +1,10 @@
 package examples.sda.calculator;
 
+import android.app.Fragment;
+
 /**
- * Created by Przemysław on 2017-04-25.
+ * Created by Adrian on 2017-04-25.
  */
 
-public class CurrencyCalculatorFragment {
+public class CurrencyCalculatorFragment extends Fragment {
 }

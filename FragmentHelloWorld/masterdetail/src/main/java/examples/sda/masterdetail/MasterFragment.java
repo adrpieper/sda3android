@@ -8,38 +8,30 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by Przemysław on 2017-04-22.
+ * Created by Adrian on 2017-04-22.
  */
 
 public class MasterFragment extends Fragment {
 
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_master, container, false);
-
-        final MainActivity mainActivity = (MainActivity) getActivity();
-        Button basicButton = (Button) view.findViewById(R.id.basicButton);
-        Button detailButton = (Button) view.findViewById(R.id.detailButton);
-
-        basicButton.setOnClickListener(new View.OnClickListener() {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_master, container, false);
+        Button basicDataButton = (Button) view.findViewById(R.id.basicDataButton);
+        Button detailDataButton = (Button) view.findViewById(R.id.detailDataButton);
+        final ButtonsInterface buttonsInterface = (ButtonsInterface) getActivity();
+        basicDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mainActivity.showBasicInfo();
+                buttonsInterface.showBasicData();
             }
         });
-
-        detailButton.setOnClickListener(new View.OnClickListener() {
+        detailDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.showDetails();
+                buttonsInterface.showDetailData();
             }
         });
 
         return view;
-
     }
-
-
 }

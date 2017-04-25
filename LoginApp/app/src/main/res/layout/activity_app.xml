@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="examples.sda.fragmenthelloworld.MainActivity">
+    android:visibility="visible"
+    tools:context="app.login.loginapp.AppActivity">
 
-    <fragment
-        android:id="@+id/fragment4"
-        android:name="examples.sda.fragmenthelloworld.ButtonFragment"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:layout="@layout/single_button_layout" />
-
+        android:text="TextView" />
 </LinearLayout>

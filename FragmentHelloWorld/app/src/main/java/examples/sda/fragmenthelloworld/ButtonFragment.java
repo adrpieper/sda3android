@@ -8,21 +8,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by Przemysław on 2017-04-22.
+ * Created by Adrian on 2017-04-22.
  */
 
-public class ButtonFragment extends Fragment{
-
+public class ButtonFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.button_layout, container, false);
+        View view = inflater.inflate(R.layout.single_button_layout, container, false);
 
-         Button button = (Button) view.findViewById(R.id.okButton);
-
+        Button button = (Button) view.findViewById(R.id.okButton);
 
         final MainActivity mainActivity = (MainActivity) getActivity();
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showMessage();
@@ -30,7 +28,5 @@ public class ButtonFragment extends Fragment{
         });
 
         return view;
-
-
     }
 }

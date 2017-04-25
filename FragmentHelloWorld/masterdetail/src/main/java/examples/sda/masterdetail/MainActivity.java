@@ -1,44 +1,46 @@
 package examples.sda.masterdetail;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends Activity implements ButtonsInterface {
 
 
+    private DetailFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // showBasicInfo();
+        fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
 
-    }
-
-
-    public void showBasicInfo() {
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-        if(fragment != null && fragment.isInLayout()){
-            fragment.showBasicInfo();
-        }else{
-            startAdditionalActivity(AdditionalActivity.BASIC);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
         }
     }
 
-    public void showDetails() {
-        DetailFragment fragment = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
-        if(fragment != null && fragment.isInLayout()){
-            fragment.showDetails();
-        }else{
-            startAdditionalActivity(AdditionalActivity.DETAIL);
+    @Override
+    public void showBasicData() {
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showBasicData();
+        }
+        else {
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("data", DetailActivity.BASIC);
+            startActivity(intent);
         }
     }
 
-    public void startAdditionalActivity(int p){
-        Intent i = new Intent(getApplicationContext(), AdditionalActivity.class);
-        i.putExtra("message", AdditionalActivity.DETAIL);
-        startActivity(i);
+    @Override
+    public void showDetailData() {
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.showDetailData();
+        }
+        else {
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("data", DetailActivity.DETAIL);
+            startActivity(intent);
+        }
     }
 }
