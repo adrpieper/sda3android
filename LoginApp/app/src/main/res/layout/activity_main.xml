@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="LOGIN" />
 
     <EditText
         android:id="@+id/nameTextField"
@@ -25,7 +25,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="PASSWORD" />
 
     <EditText
         android:id="@+id/passwordTextField"
