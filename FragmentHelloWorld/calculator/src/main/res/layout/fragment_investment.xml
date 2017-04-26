@@ -8,4 +8,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lokata" />
+
+    <EditText
+        android:id="@+id/amountOfMoneyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Type amount of money" />
+
+    <TextView
+        android:id="@+id/periodOfTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Period of time" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/finalValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Final value" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
 </LinearLayout>

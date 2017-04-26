@@ -3,7 +3,8 @@
     android:id="@+id/currencyCalculator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#b2ebf2">
 
     <TextView
         android:id="@+id/currencyCalculatorText"
@@ -24,11 +25,11 @@
         android:ems="10"
         android:inputType="number" />
 
-    <TextView
-        android:id="@+id/euroTextView"
+    <Spinner
+        android:id="@+id/currencySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Euro" />
+        />
 
     <TextView
         android:id="@+id/calculatedValue"

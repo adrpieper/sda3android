@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="hashmapExchangeRates">
+    <string-array name="currency">
         <item>euro</item>
-        <item>4.23</item>
         <item>usd</item>
-        <item>3.88</item>
         <item>gbp</item>
-        <item>4.98</item>
     </string-array>
+
 </resources>

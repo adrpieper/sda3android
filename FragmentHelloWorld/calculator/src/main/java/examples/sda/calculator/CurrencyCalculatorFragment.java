@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -22,6 +25,8 @@ public class CurrencyCalculatorFragment extends Fragment {
 
 
     public HashMap<String, Double> map;
+    private Resources resources;
+    private Spinner spinner;
 
 
     @Override
@@ -29,20 +34,29 @@ public class CurrencyCalculatorFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_currency_calculator, container, false);
         TextView textView = (TextView) view.findViewById(R.id.currencyCalculatorText);
         TextView plnTextView = (TextView) view.findViewById(R.id.plnTextView);
-        TextView euroTextView = (TextView) view.findViewById(R.id.euroTextView);
+
         final EditText firstValue = (EditText) view.findViewById(R.id.firstValue);
         calculatedNumber = (TextView) view.findViewById(R.id.calculatedValue);
         Button calculateButton = (Button) view.findViewById(R.id.calculateButton);
+        spinner = (Spinner) view.findViewById(R.id.currencySpinner);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.currency, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
 
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double numberFromEditText = Double.parseDouble(firstValue.getText().toString());
-                String calculatedExchangeRate = new Double(calculateExchangeRate(numberFromEditText, "euro", creatingHashMap())).toString();
-                calculatedNumber.setText(calculatedExchangeRate);
+                try {
+                    double numberFromEditText = Double.parseDouble(firstValue.getText().toString());
+                    final String calculatedExchangeRate = new Double(calculateExchangeRate(numberFromEditText, spinner.getSelectedItem().toString(), creatingHashMap())).toString();
+                    calculatedNumber.setText(calculatedExchangeRate);
+                }catch(NumberFormatException e){
+                    Toast.makeText(getActivity(), "Type the number pls!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return view;
@@ -56,7 +70,7 @@ public class CurrencyCalculatorFragment extends Fragment {
     }
 
     public HashMap<String, Double> creatingHashMap() {
-        Resources resources = this.getResources();
+        resources = this.getResources();
         String[] hashmapData = resources.getStringArray(R.array.hashmapExchangeRates);
         map = new HashMap<String, Double>();
         for (int i = 0; i < hashmapData.length; i = i + 2) {
@@ -64,4 +78,5 @@ public class CurrencyCalculatorFragment extends Fragment {
         }
         return map;
     }
+
 }
