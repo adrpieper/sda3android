@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="examples.sda.masterdetail.Main2Activity">
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="examples.sda.masterdetail.DetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

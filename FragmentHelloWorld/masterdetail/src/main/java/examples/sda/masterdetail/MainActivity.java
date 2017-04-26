@@ -21,11 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMessageBasic(){
 
-                   detail_fragment.showBasicData();
+                  // detail_fragment.showBasicData();
+        Intent i = new Intent(this,Main2Activity.class);
+        startActivity(i);
 
     }
 
     public void showMessageDetail(){
-        detail_fragment.showDetailData();
+        //detail_fragment.showDetailData();
+
+        Intent i = new Intent(this,Main2Activity.class);
+        startActivity(i);
     }
 }

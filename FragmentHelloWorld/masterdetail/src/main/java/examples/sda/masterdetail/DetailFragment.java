@@ -16,21 +16,27 @@ import android.widget.TextView;
 public class DetailFragment extends Fragment {
 
     private TextView textView;
+    private TextView titleTextView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
       final View v = inflater.inflate(R.layout.fragment_detail,container,false);
         textView = (TextView) v.findViewById(R.id.textView);
+        titleTextView = (TextView) v.findViewById(R.id.textView2);
         return v;
     }
 
     public void showBasicData() {
-       textView.setText("Opis podstawowy");
+       titleTextView.setText("Podstawowe");
+      textView.setText("Opis podstawowy");
+
     }
 
     public void showDetailData(){
-        textView.setText("Opis szczegoloewy");
+        titleTextView.setText("Szczegółowe");
+       textView.setText("Opis szczegoloewy");
+
     }
 
 }
