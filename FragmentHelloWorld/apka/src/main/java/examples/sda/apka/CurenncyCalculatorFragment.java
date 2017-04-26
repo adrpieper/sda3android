@@ -2,6 +2,7 @@ package examples.sda.apka;
 
 
 import android.app.Fragment;
+import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +13,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-
 public class CurenncyCalculatorFragment extends Fragment {
 
     double kurs;
     String wynik;
-
-    public CurenncyCalculatorFragment() {
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

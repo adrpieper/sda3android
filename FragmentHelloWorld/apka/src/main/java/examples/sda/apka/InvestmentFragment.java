@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static examples.sda.apka.R.layout.fragment_investment;
 
 
 public class InvestmentFragment extends Fragment {
@@ -20,8 +23,8 @@ public class InvestmentFragment extends Fragment {
     TextView sumaOdsetkiX;
     TextView sumaKapitalX;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_investment, container, false);
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+        final View view = inflater.inflate(fragment_investment, container, false);
 
         final TextView lataX = (TextView) view.findViewById (R.id.lata_wynik);
         final SeekBar seekBarLata = (SeekBar) view.findViewById ((R.id.seekBar_lata));
@@ -36,7 +39,7 @@ public class InvestmentFragment extends Fragment {
         seekBarLata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                lataX.setText (Integer.toString (progress));
+                lataX.setText ("   "+Integer.toString (progress));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -44,13 +47,17 @@ public class InvestmentFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBarL) {
                 l = seekBarL.getProgress();
-                oblicz();
+                if(r<=1 && w<=1){
+                    Toast.makeText(view.getContext (),"Trzeba wpłacić kasę",Toast.LENGTH_LONG).show();
+                }else {
+                    oblicz ();
+                }
             }
         });
         seekBarWplata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                wplataX.setText (Integer.toString (progress));
+                wplataX.setText ("   "+Integer.toString (progress));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -64,7 +71,7 @@ public class InvestmentFragment extends Fragment {
         seekBarRata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                rataX.setText (Integer.toString (progress));
+                rataX.setText ("   "+Integer.toString (progress));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -78,8 +85,8 @@ public class InvestmentFragment extends Fragment {
         return view;
     }
     void oblicz(){
-        sumaKapitalX.setText (Double.toString ((r*12*l)+w));
-        sumaOdsetkiX.setText (Double.toString ((r*12*l*odsetka)-(r*12*l)));
-        sumaWynikX.setText (Double.toString ((r*12*l*odsetka)+w));
+        sumaKapitalX.setText ("   "+Double.toString ((r*12*l)+w));
+        sumaOdsetkiX.setText ("   "+Double.toString ((r*12*l*odsetka)-(r*12*l)));
+        sumaWynikX.setText ("   "+Double.toString ((r*12*l*odsetka)+w));
     }
 }

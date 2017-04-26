@@ -2,10 +2,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/inwestycja"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="examples.sda.apka.InvestmentFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Twoja inwestycja:"
+        android:textAlignment="viewStart"
+        android:textSize="18sp"/>
 
     <LinearLayout
         android:id="@+id/lata"
@@ -46,15 +54,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ile_lat"
-                    android:textSize="12sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/lata_wynik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:textSize="12sp"/>
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -64,11 +72,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -84,6 +94,7 @@
                     android:max="10000"
                     android:progress="1000"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -95,28 +106,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pierwsza wpłata:"
-                    android:textSize="12sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/wplata_wynik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:textSize="12sp"/>
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/raty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -132,6 +146,7 @@
                     android:max="2000"
                     android:progress="100"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -143,76 +158,86 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Regularna rata:"
-                    android:textSize="12sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/raty_wynik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:textSize="12sp"/>
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/wyniki"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:orientation="vertical"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/suma_wynik_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Suma:"
-                android:textSize="12sp"/>
-            <TextView
-                android:id="@+id/suma_wynik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:textSize="12sp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/odsetki_wynik_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Odsetki:"
-                android:textSize="12sp"/>
-            <TextView
-                android:id="@+id/odsetki_wynik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:textSize="12sp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/kapital_wynik_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Kapitał:"
-                android:textSize="12sp"/>
-            <TextView
-                android:id="@+id/kapital_wynik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:textSize="12sp"/>
-        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/suma_wynik_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suma:"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/suma_wynik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/odsetki_wynik_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Odsetki:"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/odsetki_wynik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/kapital_wynik_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kapitał:"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/kapital_wynik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"/>
+    </LinearLayout>
 </LinearLayout>

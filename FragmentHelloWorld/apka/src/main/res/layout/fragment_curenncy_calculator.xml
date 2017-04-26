@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="PLN"
+        android:hint="PLN"
         app:layout_constraintBottom_toTopOf="@+id/calc"
         tools:layout_editor_absoluteX="85dp" />
 
