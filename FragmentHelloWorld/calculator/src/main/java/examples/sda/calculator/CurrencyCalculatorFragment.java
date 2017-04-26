@@ -33,26 +33,30 @@ public class CurrencyCalculatorFragment extends Fragment {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    String dolarString = plnEditText.getText().toString();
-                    double dolar = (Double.parseDouble(dolarString)) * 3.876;
-                    dolarTextView.setText(dolar + "");
-
-                    Toast.makeText(getActivity(), "Wpisana kwota : " + dolar, Toast.LENGTH_LONG).show();
-                } catch (NumberFormatException e) {
-                    dolarTextView.setText("0");
-                }
-
-                try {
-                    String plnString = dolarEditText.getText().toString();
-                    double pln = (Double.parseDouble(plnString)) / 3.876;
-                    plnTextView.setText(pln + "");
-                } catch (NumberFormatException e) {
-                    dolarTextView.setText("0");
-                }
+                calc();
             }
         });
 
         return view;
+    }
+
+    public void calc() {
+        try {
+            String dolarString = plnEditText.getText().toString();
+            double dolar = (Double.parseDouble(dolarString)) * 3.876;
+            dolarTextView.setText(dolar + "");
+
+            Toast.makeText(getActivity(), "Wpisana kwota : " + dolar, Toast.LENGTH_LONG).show();
+        } catch (NumberFormatException e) {
+            dolarTextView.setText("0");
+        }
+
+        try {
+            String plnString = dolarEditText.getText().toString();
+            double pln = (Double.parseDouble(plnString)) / 3.876;
+            plnTextView.setText(pln + "");
+        } catch (NumberFormatException e) {
+            dolarTextView.setText("0");
+        }
     }
 }

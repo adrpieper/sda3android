@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -38,11 +39,15 @@ public class InvestmentFragment extends Fragment {
         procentEditText = (EditText) view.findViewById(R.id.procentEditText);
         zyskTextView = (TextView) view.findViewById(R.id.zyskTextView);
 
+        view.findViewById(R.id.calculateLokata).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lataTextView.setText(lataEditText.getText());
+                kwotaTextView.setText(kwotaEditText.getText());
+                procentTextView.setText(procentEditText.getText());
+            }
+        });
 
-
-        lataTextView.setText(lataEditText.getText());
-        kwotaTextView.setText(kwotaEditText.getText());
-        procentTextView.setText(procentEditText.getText());
 
         return view;
     }
