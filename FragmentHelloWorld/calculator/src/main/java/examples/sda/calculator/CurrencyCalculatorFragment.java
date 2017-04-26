@@ -21,14 +21,7 @@ public class CurrencyCalculatorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_currency_calculator, container, false);
 
-        amountEditText = (EditText) view.findViewById(R.id.amountEditText);
-        view.findViewById(R.id.calcButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calc();
-            }
-        });
-        return view;
+
     }
 
     private void calc() {
