@@ -15,6 +15,13 @@ public class CurrencyCalcFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_currency_calculator, container, false);
+        final View view = inflater.inflate(R.layout.fragment_currency_calculator, container, false);
+        // wyświetl tekst mówiący że tutaj będzie kalkulator walut
+
+//        view.findViewById(R.id.)
+
+
+        return view;
+
     }
 }

@@ -15,6 +15,7 @@
         tools:layout="@layout/fragment_buttons" />
 
     <FrameLayout
+        android:id="@+id/fragmentFrame"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1">
