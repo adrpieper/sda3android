@@ -23,5 +23,7 @@ public class MainActivity extends Activity {
         final FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentFrame, new InvestmentFragment());
         transaction.commit();
+
+
     }
 }

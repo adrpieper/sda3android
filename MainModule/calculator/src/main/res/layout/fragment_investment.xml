@@ -4,24 +4,32 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_naklad_inwestycyjny"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="naklad inwerycyjny"
+        android:inputType="number|numberDecimal" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText_przychod_z_inwestycji"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="srednioroczny przychod z inwestycji"
+        android:inputType="number|numberDecimal" />
 
-    <TextView
-        android:id="@+id/textView2_pn"
+
+    <Button
+        android:id="@+id/button_calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Calculate" />
+
+    <TextView
+        android:id="@+id/textView_PBN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="okres zwrotu z inwestycji - lata"
+        android:textSize="18sp" />
 </LinearLayout>
