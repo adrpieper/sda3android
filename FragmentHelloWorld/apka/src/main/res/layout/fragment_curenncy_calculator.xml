@@ -1,6 +1,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/curenncy_calc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="examples.sda.apka.CurenncyCalculatorFragment">
@@ -8,11 +9,10 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/usd"
+        android:id="@+id/wal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
-        android:text="USD"
+        android:layout_marginBottom="27dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="170dp" />
@@ -23,17 +23,48 @@
         android:layout_height="wrap_content"
         android:text="Przelicz"
         tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="184dp" />
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/wal" />
 
     <EditText
         android:id="@+id/pln"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
         android:ems="10"
+        android:inputType="text"
         android:text="PLN"
-        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/calc"
-        tools:layout_editor_absoluteX="50dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteX="85dp" />
+
+    <RadioGroup
+        android:id="@+id/chack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:checkedButton="@+id/radioButton_usd"
+        app:layout_constraintBottom_toTopOf="@+id/pln"
+        tools:layout_editor_absoluteX="76dp">
+
+        <RadioButton
+            android:id="@+id/radioButton_usd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/usd" />
+
+        <RadioButton
+            android:id="@+id/radioButton_chf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/chf" />
+
+        <RadioButton
+            android:id="@+id/radioButton_euro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/euro" />
+    </RadioGroup>
+
 </android.support.constraint.ConstraintLayout>
