@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="calcButton">Button</string>
+    <string name="Convert">Convert</string>
+    <string name="Investment">Investment</string>
+    <string name="Name">Name</string>
 </resources>

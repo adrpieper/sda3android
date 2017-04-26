@@ -16,7 +16,7 @@
         android:id="@+id/calcButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/calcButton" />
 
     <TextView
         android:id="@+id/textView2"
@@ -31,28 +31,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="52dp"
-            android:layout_marginTop="170dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="39dp"
             android:text="Wpisana kwota [PLN]"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/amountEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="168dp"
+            android:layout_height="46dp"
             android:ems="10"
             android:inputType="number"
-            android:text="Name"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="242dp" />
+            android:text="@string/Name"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="71dp" />
 
         <Button
             android:id="@+id/calcButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Przelicz"
-            tools:layout_editor_absoluteX="281dp"
-            tools:layout_editor_absoluteY="242dp" />
+            android:text="@string/Convert"
+            tools:layout_editor_absoluteX="225dp"
+            tools:layout_editor_absoluteY="71dp" />
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>
