@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="kwota_depozytu">Deposit</string>
+    <string name="zysk">Profit</string>
+    <string name="policz">Count</string>
+    <string name="przelicz">Count</string>
+
+</resources>

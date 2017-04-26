@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="kwota_depozytu">kwota depozytu</string>
+    <string name="zysk">Zysk</string>
+    <string name="policz">Policz</string>
+    <string name="przelicz">Przelicz</string>
 
 </resources>
