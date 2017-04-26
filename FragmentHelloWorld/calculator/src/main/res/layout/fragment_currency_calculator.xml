@@ -2,46 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kalkulator Walut"
-        android:textAlignment="center"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/plnTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PLN" />
+        android:text="@string/currency_calculator" />
 
     <EditText
-        android:id="@+id/plnEditText"
+        android:id="@+id/amountEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/amount"
         android:ems="10"
-        android:inputType="number"
-        android:text="0" />
-
-    <TextView
-        android:id="@+id/dolarTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="$" />
-
-    <EditText
-        android:id="@+id/dolarEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="0" />
+        android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/calculate"
+        android:id="@+id/calcButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="@string/calc" />
+
+
+
 </LinearLayout>
