@@ -1,11 +1,12 @@
 package examples.sda.calculator;
 
 /**
- * Created by Notebook on 4/26/2017.
+ * Created by Adrian on 2017-04-26.
  */
 
 public class CurrencyCalculator {
-    public double calc(double pin){
-        return pin*4;
+
+    public double calc(double pln){
+        return pln*4;
     }
 }
