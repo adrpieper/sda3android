@@ -4,8 +4,55 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/LokataTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lokata" />
+        android:text="Lokata"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/LataTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lata" />
+
+    <EditText
+        android:id="@+id/LataEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/KwotaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kwota" />
+
+    <EditText
+        android:id="@+id/KwotaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/ProcentTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Procent" />
+
+    <EditText
+        android:id="@+id/ProcentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/ZyskTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zysk" />
 </LinearLayout>
