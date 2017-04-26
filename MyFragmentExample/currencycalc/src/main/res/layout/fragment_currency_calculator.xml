@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Kalkulator Walut"
         tools:text="Kalkulator Walut"
-        android:textSize="42dp"
+        android:textSize="22dp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -18,12 +18,12 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="130dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="24dp"
-        tools:text="Kwota"
-        android:layout_marginTop="43dp"
+        android:text="Kwota:"
+        android:textSize="18dp"
+        tools:text="Kwota:"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -32,39 +32,39 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="130dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="18dp"
         android:text="TextView"
-        android:textSize="24dp"
-        tools:text="Przelicz z:" />
+        android:textSize="18dp"
+        tools:text="Przelicz z:"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="130dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textSize="24dp"
+        android:textSize="18dp"
         tools:text="Przelicz na:" />
 
     <EditText
-        android:id="@+id/input_value"
+        android:id="@+id/input_value_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        android:layout_above="@+id/textView5"
+        android:layout_alignTop="@+id/textView"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/src_currency"
+        android:id="@+id/src_currency_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView5"
@@ -75,7 +75,7 @@
         android:text="Name" />
 
     <EditText
-        android:id="@+id/dst_currency"
+        android:id="@+id/dst_currency_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView6"
@@ -89,9 +89,19 @@
         android:id="@+id/button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="29dp"
         android:text="Oblicz"
-        android:layout_below="@+id/dst_currency"
+        android:layout_below="@+id/dst_currency_field"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:visibility="invisible"/>
 
 </RelativeLayout>
