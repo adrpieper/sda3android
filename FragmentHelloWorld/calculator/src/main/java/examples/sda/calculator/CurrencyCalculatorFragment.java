@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by RENT on 2017-04-25.
@@ -31,9 +32,12 @@ public class CurrencyCalculatorFragment extends Fragment {
             public void onClick(View v) {
 
 
-
-                String after = "" + Integer.parseInt(pln.getText().toString())* 3.14;
-                usd.setText(after);
+                try {
+                    String after = "" + Integer.parseInt(pln.getText().toString())* 3.14;
+                    usd.setText(after);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getActivity(),"Podaj liczbę", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
