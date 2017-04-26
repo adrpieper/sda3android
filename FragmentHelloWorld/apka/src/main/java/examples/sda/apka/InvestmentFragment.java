@@ -15,7 +15,10 @@ public class InvestmentFragment extends Fragment {
     double sumaWynik;
     double odsetkiWynik;
     double kapitalWynik;
-    double odsetka;
+    double odsetka = 1.05;
+    int r=1;
+    int l=1;
+    int w=1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,7 +42,8 @@ public class InvestmentFragment extends Fragment {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBarL) {
-                oblicz(Integer.parseInt(seekBarL+""),1,1);
+                l = seekBarL.getProgress();
+                oblicz();
             }
         });
         seekBarWplata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
@@ -52,9 +56,8 @@ public class InvestmentFragment extends Fragment {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBarW) {
-                oblicz(1,Integer.parseInt(seekBarW+""),1);
-                sumaWynik = Double.toString(seekBarW);
-                sumaWynikX.setText(sumaWynik);
+                w = seekBarW.getProgress();
+                oblicz();
             }
         });
         seekBarRata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
@@ -67,15 +70,16 @@ public class InvestmentFragment extends Fragment {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBarR) {
-                oblicz(1,1,Integer.parseInt(seekBarR+""));
+                r = seekBarR.getProgress();
+                oblicz();
             }
         });
-
         return view;
     }
-    double oblicz( int a, int b, int c){
-        sumaWynik=a*b+c;
-        return sumaWynik;
+    void oblicz(){
+        odsetkiWynik = r*12*l*odsetka;
+        kapitalWynik = r*12*l;
+        sumaWynik = odsetkiWynik+kapitalWynik+w;
     }
 
 }

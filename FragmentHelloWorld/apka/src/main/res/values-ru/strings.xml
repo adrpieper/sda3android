@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ru-Apka</string>
+    <string name="usd">Ru-USD</string>
+    <string name="chf">Ru-CHF</string>
+    <string name="euro">Ru-EURO</string>
+    <string name="upsss">Ru-Wprowadź cyfry</string>
+    <string name="ile_lat">Ru-Ile Lat:</string>
+</resources>
