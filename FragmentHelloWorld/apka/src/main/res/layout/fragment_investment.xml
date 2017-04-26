@@ -53,6 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textAlignment="center"
                     android:textSize="12sp"/>
             </LinearLayout>
         </LinearLayout>
@@ -101,6 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textAlignment="center"
                     android:textSize="12sp"/>
             </LinearLayout>
         </LinearLayout>
@@ -144,10 +146,11 @@
                     android:textSize="12sp"/>
 
                 <TextView
-                    android:id="@+id/wplata_raty"
+                    android:id="@+id/raty_wynik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textAlignment="center"
                     android:textSize="12sp"/>
             </LinearLayout>
         </LinearLayout>
