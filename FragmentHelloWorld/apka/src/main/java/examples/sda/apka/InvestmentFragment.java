@@ -6,24 +6,45 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class InvestmentFragment extends Fragment {
 
-
-    public InvestmentFragment() {
-        // Required empty public constructor
-    }
-
+    double sumaWynik;
+    double odsetkiWynik;
+    double kapitalWynik;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_investment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_investment, container, false);
+
+        final TextView lataX = (TextView) view.findViewById (R.id.lata_wynik);
+        final SeekBar seekBarLata = (SeekBar) view.findViewById ((R.id.seekBar_lata));
+
+        seekBarLata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                lataX.setText (Integer.toString (progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+
+
+
+        return view;
     }
 
 }

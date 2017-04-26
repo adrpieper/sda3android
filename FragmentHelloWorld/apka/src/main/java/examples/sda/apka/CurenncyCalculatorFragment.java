@@ -19,7 +19,6 @@ public class CurenncyCalculatorFragment extends Fragment {
     String wynik;
 
     public CurenncyCalculatorFragment() {
-
     }
 
     @Override
@@ -31,24 +30,6 @@ public class CurenncyCalculatorFragment extends Fragment {
         final EditText pln = (EditText) view.findViewById(R.id.pln);
         final TextView wal = (TextView) view.findViewById(R.id.wal);
         final RadioGroup gr = (RadioGroup) view.findViewById(R.id.chack);
-        final RadioButton rchf = (RadioButton) view.findViewById (R.id.radioButton_chf);
-
-//        gr.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                if(gr . .check(R.id.radioButton_chf)){
-//                    setKurs(waluty.CHF.);
-//                }else if(gr.getCheckedRadioButtonId() == R.id.radioButton_euro){
-//                    setKurs(waluty.EURO.hashCode ());
-//                }else{
-//                    setKurs(waluty.USD.hashCode ());
-//                };
-//            }
-//            private double setKurs(double k){
-//                kurs = k;
-//                return kurs;
-//            }
-//        });
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,9 +50,14 @@ public class CurenncyCalculatorFragment extends Fragment {
                 return kurs;
             }
             private String Calculate(String input) {
+                try{
                 double tmp = Double.valueOf(input);
                 double tmp1 = (double)tmp*kurs;
                 wynik = Double.toString(tmp1);
+                } catch (NumberFormatException e){
+                    wynik = getString(R.string.upsss);
+                    return wynik;
+                }
                 return wynik;
             }
         });
