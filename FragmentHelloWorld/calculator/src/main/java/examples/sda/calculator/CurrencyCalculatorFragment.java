@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CurrencyCalculatorFragment extends Fragment {
 
@@ -32,10 +33,23 @@ public class CurrencyCalculatorFragment extends Fragment {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double dolar = (Double.parseDouble(plnEditText.getText().toString())) * 3.876;
-                dolarTextView.setText(dolar + "");
-                double pln = (Double.parseDouble(dolarEditText.getText().toString())) / 3.876;
-                plnTextView.setText(pln + "");
+                try {
+                    String dolarString = plnEditText.getText().toString();
+                    double dolar = (Double.parseDouble(dolarString)) * 3.876;
+                    dolarTextView.setText(dolar + "");
+
+                    Toast.makeText(getActivity(), "Wpisana kwota : " + dolar, Toast.LENGTH_LONG).show();
+                } catch (NumberFormatException e) {
+                    dolarTextView.setText("0");
+                }
+
+                try {
+                    String plnString = dolarEditText.getText().toString();
+                    double pln = (Double.parseDouble(plnString)) / 3.876;
+                    plnTextView.setText(pln + "");
+                } catch (NumberFormatException e) {
+                    dolarTextView.setText("0");
+                }
             }
         });
 

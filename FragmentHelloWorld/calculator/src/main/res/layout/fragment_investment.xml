@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/LokataTextView"
+        android:id="@+id/lokataTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lokata"
@@ -12,47 +12,53 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/LataTextView"
+        android:id="@+id/lataTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lata" />
 
     <EditText
-        android:id="@+id/LataEditText"
+        android:id="@+id/lataEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/KwotaTextView"
+        android:id="@+id/kwotaTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Kwota" />
 
     <EditText
-        android:id="@+id/KwotaEditText"
+        android:id="@+id/kwotaEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/ProcentTextView"
+        android:id="@+id/procentTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Procent" />
 
     <EditText
-        android:id="@+id/ProcentEditText"
+        android:id="@+id/procentEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/ZyskTextView"
+        android:id="@+id/zyskTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zysk" />
+
+    <Button
+        android:id="@+id/calculateLokata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
 </LinearLayout>
