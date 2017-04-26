@@ -12,14 +12,13 @@ import android.widget.TextView;
 
 public class InvestmentFragment extends Fragment {
 
-    double sumaWynik;
-    double odsetkiWynik;
-    double kapitalWynik;
     double odsetka = 1.05;
     int r=1;
     int l=1;
     int w=1;
-
+    TextView sumaWynikX;
+    TextView sumaOdsetkiX;
+    TextView sumaKapitalX;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_investment, container, false);
@@ -30,7 +29,9 @@ public class InvestmentFragment extends Fragment {
         final SeekBar seekBarWplata = (SeekBar) view.findViewById ((R.id.seekBar_wplata));
         final TextView rataX = (TextView) view.findViewById (R.id.raty_wynik);
         final SeekBar seekBarRata = (SeekBar) view.findViewById ((R.id.seekBar_raty));
-        final TextView sumaWynikX = (TextView) view.findViewById (R.id.suma_wynik);
+        sumaWynikX = (TextView) view.findViewById (R.id.suma_wynik);
+        sumaOdsetkiX = (TextView) view.findViewById (R.id.odsetki_wynik);
+        sumaKapitalX = (TextView) view.findViewById (R.id.kapital_wynik);
 
         seekBarLata.setOnSeekBarChangeListener (new SeekBar.OnSeekBarChangeListener () {
             @Override
@@ -77,9 +78,8 @@ public class InvestmentFragment extends Fragment {
         return view;
     }
     void oblicz(){
-        odsetkiWynik = r*12*l*odsetka;
-        kapitalWynik = r*12*l;
-        sumaWynik = odsetkiWynik+kapitalWynik+w;
+        sumaKapitalX.setText (Double.toString ((r*12*l)+w));
+        sumaOdsetkiX.setText (Double.toString ((r*12*l*odsetka)-(r*12*l)));
+        sumaWynikX.setText (Double.toString ((r*12*l*odsetka)+w));
     }
-
 }
