@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CurrencyCalc</string>
+    <string name="amount">Kwota:</string>
+    <string name="calculate">Oblicz</string>
+    <string name="calculate_currency">Oblicz walutę</string>
+    <string name="calculate_investment">Oblicz lokatę</string>
+    <string name="currency_calc">Kalkulator walut</string>
+    <string name="dst_currency">Przelicz na:</string>
+    <string name="src_currency">Przelicz z:</string>
+</resources>

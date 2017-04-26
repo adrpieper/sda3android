@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CurrencyCalc</string>
+    <string name="calculate_currency">Calculate Currency</string>
+    <string name="calculate_investment">Calculate Investment</string>
+    <string name="currency_calc">Currency Calculator</string>
+    <string name="amount">Amount:</string>
+    <string name="src_currency">Calculate from:</string>
+    <string name="dst_currency">Calculate to:</string>
+    <string name="calculate">Calculate</string>
 </resources>
