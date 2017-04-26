@@ -6,9 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Adrian on 2017-04-25.
- */
+
 
 public class CurrencyCalculatorFragment extends Fragment {
 
