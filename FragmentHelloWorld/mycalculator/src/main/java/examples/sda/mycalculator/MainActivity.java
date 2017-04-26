@@ -10,7 +10,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showCurrencyCalculator();
+        showInvestmentForm();
     }
     public void showCurrencyCalculator() {
         final FragmentTransaction transaction = getFragmentManager().beginTransaction();

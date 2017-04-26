@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MyCalculator</string>
+    <string name="Count">Oblicz</string>
+    <string name="End_sum">Suma na koniec</string>
+    <string name="investments">Lokaty</string>
+    <string name="percent">Oprocentowanie %</string>
+    <string name="years">Lata</string>
+    <string name="investment_amount">kwota lokaty</string>
 </resources>

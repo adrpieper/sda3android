@@ -23,7 +23,7 @@ public class ButtonsFragment extends Fragment {
                 mainActivity.showInvestmentForm();
             }
         });
-        view.findViewById(R.id.lokata_button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.clalculatorButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
@@ -31,6 +31,4 @@ public class ButtonsFragment extends Fragment {
         });
         return view;
     }
-
-
 }
