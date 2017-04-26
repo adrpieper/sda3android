@@ -2,8 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/curenncy_calc"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context="examples.sda.apka.CurenncyCalculatorFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,7 +12,8 @@
         android:id="@+id/wal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="16dp"
+        android:text="USD"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="170dp" />
@@ -21,10 +22,10 @@
         android:id="@+id/calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Przelicz"
-        tools:layout_editor_absoluteX="149dp"
         android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/wal" />
+        android:text="Przelicz"
+        app:layout_constraintBottom_toTopOf="@+id/wal"
+        tools:layout_editor_absoluteX="149dp" />
 
     <EditText
         android:id="@+id/pln"
@@ -50,6 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="false"
+            android:contextClickable="false"
             android:text="@string/usd" />
 
         <RadioButton
@@ -64,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/euro" />
+            android:text="EURO" />
     </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

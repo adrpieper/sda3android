@@ -8,14 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
 public class CurenncyCalculatorFragment extends Fragment {
 
-    double kurs = 2.5;
-    String wynik ="";
+    double kurs;
+    String wynik;
 
     public CurenncyCalculatorFragment() {
 
@@ -30,27 +31,42 @@ public class CurenncyCalculatorFragment extends Fragment {
         final EditText pln = (EditText) view.findViewById(R.id.pln);
         final TextView wal = (TextView) view.findViewById(R.id.wal);
         final RadioGroup gr = (RadioGroup) view.findViewById(R.id.chack);
+        final RadioButton rchf = (RadioButton) view.findViewById (R.id.radioButton_chf);
 
-        gr.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                if(gr.getCheckedRadioButtonId() == R.id.radioButton_chf){
-                    wal.setText (R.string.chf);
-                }else if(gr.getCheckedRadioButtonId() == R.id.radioButton_euro){
-                    wal.setText (R.string.euro);
-                }else{
-                    wal.setText (R.string.usd);
-                };
-            }
-        });
+//        gr.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                if(gr . .check(R.id.radioButton_chf)){
+//                    setKurs(waluty.CHF.);
+//                }else if(gr.getCheckedRadioButtonId() == R.id.radioButton_euro){
+//                    setKurs(waluty.EURO.hashCode ());
+//                }else{
+//                    setKurs(waluty.USD.hashCode ());
+//                };
+//            }
+//            private double setKurs(double k){
+//                kurs = k;
+//                return kurs;
+//            }
+//        });
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String tmp = pln.getText().toString();
+                setKurs(gr.getCheckedRadioButtonId());
                 Calculate(tmp);
                 wal.setText(wynik);
+            }
+            private double setKurs(int k){
+                if(k == R.id.radioButton_chf){
+                    kurs = Waluta.CHF.waluta;
+                }else if(k == R.id.radioButton_euro){
+                    kurs = Waluta.EURO.waluta;
+                }else{
+                    kurs = Waluta.USD.waluta;
+                };
+                return kurs;
             }
             private String Calculate(String input) {
                 double tmp = Double.valueOf(input);
