@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="button">Button</string>
+    <string name="button1">Button</string>
+    <string name="button2">Button</string>
+    <string name="currency_calculator">Kalkulator Walut</string>
+    <string name="investment">Lokata</string>
 </resources>

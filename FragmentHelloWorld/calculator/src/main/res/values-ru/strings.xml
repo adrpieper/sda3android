@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="przyciskojo">Button</string>
+    <string name="przyciskojo1">Button</string>
+    <string name="przyciskojo2">Button</string>
+    <string name="nazwija_kalkulatora">Kalkulator Walut</string>
+    <string name="lokatoszyn">Lokata</string>
+</resources>
