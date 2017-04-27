@@ -20,16 +20,14 @@ public class ButtonsFragment extends Fragment {
 
         final MainActivity mainActivity = (MainActivity) getActivity();
 
-        final View currencyButton = view.findViewById(R.id.currencyCalculatorButton);
         view.findViewById(R.id.investmentButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showInvestmentForm();
-                currencyButton.setEnabled(true);
             }
         });
 
-        currencyButton.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.currencyCalculatorButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
@@ -41,7 +39,6 @@ public class ButtonsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mainActivity.showAnimationsExamples();
-                currencyButton.setEnabled(false);
             }
         });
 

@@ -4,26 +4,24 @@
     android:shape="rectangle"
     >
 
-    <gradient android:startColor="#bdc2bd"
-        android:endColor="#8b8b8b"
-        android:centerColor="#545454"
-        android:angle="45"
+    <gradient android:startColor="@color/buttonPressed"
+        android:endColor="@color/buttonDefault"
+        android:centerColor="@color/buttonDisabled"
+
+        android:angle="135"
         />
 
-    <stroke
-        android:color="#000000"
-        android:width="16dp"
-        android:dashWidth="32dp"
-        android:dashGap="16dp"
+    <stroke android:color="#000000"
+        android:width="10dp"
+        android:dashWidth="14dp"
+        android:dashGap="14dp"
         />
 
     <corners android:radius="160dp"
-        android:topLeftRadius="0dp"
-        android:topRightRadius="0dp"
-        />
+        android:bottomRightRadius="0dp"/>
 
-    <padding android:bottom="32dp"
-        android:left="32dp"
-        android:right="32dp"
-        android:top="32dp" />
+
+
+
+
 </shape>
