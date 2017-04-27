@@ -3,9 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:buttonStyle">@style/MyButton</item>
     </style>
 
-    <style name="MyButton" parent="android:Widget.Holo.Button">
+    <style name="MyButton" parent="android:Widget.Holo.Light.Button">
         <item name="android:background">@drawable/button_background</item>
         <item name="android:textSize">32sp</item>
         <item name="android:textColor">#FF0000</item>

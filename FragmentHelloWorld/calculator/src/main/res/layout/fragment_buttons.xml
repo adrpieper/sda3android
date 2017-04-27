@@ -7,7 +7,6 @@
 
     <Button
         android:id="@+id/investmentButton"
-        style="@style/MyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/investment" />
@@ -17,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
-        style="@style/MyButton"
         android:text="@string/currency_calculator" />
 
     <Button
