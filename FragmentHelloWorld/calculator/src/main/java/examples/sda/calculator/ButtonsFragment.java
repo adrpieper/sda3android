@@ -34,6 +34,7 @@ public class ButtonsFragment extends Fragment {
                 mainActivity.showCurrencyCalculator();
                 Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.example_animation);
                 button.startAnimation(animation);
+
             }
         });
 
