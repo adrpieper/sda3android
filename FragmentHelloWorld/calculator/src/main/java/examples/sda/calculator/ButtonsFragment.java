@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 public class ButtonsFragment extends Fragment {
 
@@ -21,12 +23,18 @@ public class ButtonsFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.currencyCalculatorButton).setOnClickListener(new View.OnClickListener() {
+        final View button = view.findViewById(R.id.currencyCalculatorButton);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.example_animation);
+                button.startAnimation(animation);
             }
         });
+
+
+
 
         return view;
     }

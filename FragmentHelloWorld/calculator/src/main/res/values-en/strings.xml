@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="currency_calculator">Currency calculator</string>
+    <string name="calc">Calc</string>
+    <string name="amount">Amount</string>
+    <string name="investment">Investment</string>
+</resources>
