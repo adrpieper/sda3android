@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="examples.sda.masterdetail.MainActivity">
+    android:orientation="horizontal"
+    tools:context="examples.sda.calculator.MainActivity">
 
     <fragment
-        android:id="@+id/fragment2"
-        android:name="examples.sda.masterdetail.MasterFragment"
+        android:id="@+id/fragment"
+        android:name="examples.sda.calculator.ButtonsFragment"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:layout="@layout/fragment_master" />
+        tools:layout="@layout/fragment_buttons" />
 
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="examples.sda.masterdetail.DetailFragment"
+    <FrameLayout
+        android:id="@+id/fragmentFrame"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@layout/fragment_detail" />
+        android:layout_weight="1">
+
+    </FrameLayout>
+
 </LinearLayout>

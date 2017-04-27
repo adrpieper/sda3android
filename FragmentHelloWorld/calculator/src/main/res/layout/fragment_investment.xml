@@ -3,15 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/basicDataButton"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/basic_data" />
-
-    <Button
-        android:id="@+id/detailDataButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_data" />
+        android:text="@string/investment" />
 </LinearLayout>

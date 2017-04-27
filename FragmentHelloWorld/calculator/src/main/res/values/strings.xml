@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="currency_calculator">Kalkulator Walut</string>
+    <string name="calc">Licz</string>
+    <string name="amount">Kwota</string>
+    <string name="investment">Lokata</string>
+</resources>

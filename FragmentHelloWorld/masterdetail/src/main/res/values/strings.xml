@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MasterDetail</string>
+    <string name="basic_data">Dane Podstawowe</string>
+    <string name="detail_data">Szczegóły</string>
 </resources>
