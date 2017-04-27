@@ -4,9 +4,9 @@
     android:shape="rectangle"
     >
 
-    <gradient android:startColor="@color/buttonPressed"
-        android:endColor="@color/buttonDefault"
-        android:centerColor="@color/buttonDisabled"
+    <gradient android:startColor="#bdc2bd"
+        android:endColor="#8b8b8b"
+        android:centerColor="#545454"
         android:angle="45"
         />
 
@@ -22,4 +22,8 @@
         android:topRightRadius="0dp"
         />
 
+    <padding android:bottom="32dp"
+        android:left="32dp"
+        android:right="32dp"
+        android:top="32dp" />
 </shape>
