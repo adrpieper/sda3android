@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 /**
@@ -19,8 +21,8 @@ public class ButtonsFragment extends Fragment {
 
             View view = inflater.inflate(R.layout.fragment_buttons,container,false);
 
-            Button calcButton = (Button) view.findViewById(R.id.calc_button);
-            Button investButton = (Button) view.findViewById(R.id.invest_button);
+            final Button calcButton = (Button) view.findViewById(R.id.calc_button);
+            final Button investButton = (Button) view.findViewById(R.id.invest_button);
 
         final MainActivity mainActivity = (MainActivity) getActivity();
 
@@ -28,6 +30,8 @@ public class ButtonsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mainActivity.openCalc();
+                Animation animation = AnimationUtils.loadAnimation(getActivity(),R.anim.anim);
+                calcButton.startAnimation(animation);
             }
         });
 
@@ -35,8 +39,13 @@ public class ButtonsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mainActivity.openInvest();
+                Animation animation = AnimationUtils.loadAnimation(getActivity(),R.anim.anim);
+                investButton.startAnimation(animation);
             }
         });
+
+
+
 
 
 

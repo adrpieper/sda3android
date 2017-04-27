@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+
+
+
+
+
+    >
+
+
+<corners android:radius="99dp"></corners>
+
+    <gradient android:startColor="@color/buttonPressed"
+        android:endColor="@color/buttonDefault"
+        android:centerColor="@color/buttonDisabled"
+        android:angle="90"></gradient>
+    <stroke android:color="#000" android:width="20dp"
+        android:dashGap="55dp"
+        android:dashWidth="40dp"></stroke>
+
+
+
+</shape>
