@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
+        style="@style/MyButton"
         android:text="Przelicz"
         app:layout_constraintBottom_toTopOf="@+id/wal"
         tools:layout_editor_absoluteX="149dp" />

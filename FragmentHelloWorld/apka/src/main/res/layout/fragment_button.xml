@@ -10,12 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_dark"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/MyButton.MyBigButton"
             android:text="Lokata"
             android:textSize="24sp"/>
 
@@ -23,8 +25,9 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/MyButton"
             android:text="Kalkulator walut"
-            android:textSize="24sp"/>
+            android:height="64sp"/>
     </LinearLayout>
 
 </LinearLayout>
