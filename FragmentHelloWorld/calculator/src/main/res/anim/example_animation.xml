@@ -8,16 +8,15 @@
         android:toXDelta="50%"
         android:toYDelta="0%"
         android:duration="2000"
-
-/>
+        />
     <rotate
         android:startOffset="2000"
         android:pivotX="50%"
         android:pivotY="100%"
-        android:fromDegrees="0"
         android:toDegrees="90"
         android:duration="2000"
         />
+
     <scale
         android:startOffset="4000"
         android:fromXScale="1.0"
@@ -25,10 +24,13 @@
         android:pivotX="50%"
         android:pivotY="100%"
         android:toXScale="2.0"
+        android:toYScale="1.0"
         android:duration="2000"
-/>
-    <alpha android:fromAlpha="0"
+        />
+
+    <alpha android:toAlpha="0"
         android:startOffset="6000"
-        android:
-/>
+        android:duration="2000"/>
+
+
 </set>
