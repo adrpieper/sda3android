@@ -20,13 +20,11 @@ public class InvestmentFragment extends Fragment {
     private TextView okresZwrotuInwestycji;
     private EditText nakladInwesycji;
     private EditText przychodZInwestycji;
-    private Context context;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         final View view = inflater.inflate(R.layout.fragment_investment,container,false);
-        context =  getActivity();
 
         nakladInwesycji= (EditText) view.findViewById(R.id.editText_naklad_inwestycyjny);
         przychodZInwestycji = (EditText) view.findViewById(R.id.editText_przychod_z_inwestycji);
@@ -42,7 +40,7 @@ public class InvestmentFragment extends Fragment {
                      okresZwrotuInwestycji.setText(calculateInvestment(przychodInvestycja, nakladInvest));
 
                  } catch (NumberFormatException ex){
-                     Toast.makeText(context, "Insert only numbers", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(inflater.getContext(), "Insert only numbers", Toast.LENGTH_SHORT).show();
                  }
              }
          });

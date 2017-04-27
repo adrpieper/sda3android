@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">calculatrice</string>
+    <string name="zwrrot_w_latach">retour_d_un_investissement</string>
+    <string name="calculate">calculer</string>
+    <string name="srednioroczny_przychod_z_inwestycji">revenue_de_un_investissement</string>
+    <string name="naklad_inwerycyjny">budget</string>
+</resources>

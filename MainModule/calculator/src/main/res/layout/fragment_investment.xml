@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="naklad inwerycyjny"
+        android:hint="@string/naklad_inwerycyjny"
         android:inputType="number|numberDecimal" />
 
     <EditText
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="srednioroczny przychod z inwestycji"
+        android:hint="@string/srednioroczny_przychod_z_inwestycji"
         android:inputType="number|numberDecimal" />
 
 
@@ -24,12 +24,12 @@
         android:id="@+id/button_calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="@string/calculate" />
 
     <TextView
         android:id="@+id/textView_PBN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="okres zwrotu z inwestycji - lata"
+        android:hint="@string/zwrrot_w_latach"
         android:textSize="18sp" />
 </LinearLayout>

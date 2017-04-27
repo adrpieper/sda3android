@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="zwrrot_w_latach">locution_in_yers</string>
+    <string name="calculate">compute</string>
+    <string name="srednioroczny_przychod_z_inwestycji">incom_form_investments</string>
+    <string name="naklad_inwerycyjny">assets</string>
+
 </resources>
