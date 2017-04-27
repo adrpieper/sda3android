@@ -29,4 +29,11 @@ public class MainActivity extends Activity {
         transaction.replace(R.id.fragmentFrame, new InvestmentFragment());
         transaction.commit();
     }
+
+
+    public void showAnimationsExamples() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentFrame, new AnimationsFragment());
+        transaction.commit();
+    }
 }
