@@ -31,7 +31,7 @@ public class InvestmentFragment extends Fragment {
         lataEditText = (EditText) view.findViewById(R.id.lata);
         kwotaEditText = (EditText) view.findViewById(R.id.kwotaLokaty);
         wynikTextView = (TextView) view.findViewById(R.id.wynik);
-        final Button obliczLokateButton = (Button) view.findViewById(R.id.lokataButton);
+        final Button obliczLokateButton = (Button) view.findViewById(R.id.obliczLokate);
         obliczLokateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
