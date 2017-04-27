@@ -1,0 +1,93 @@
+Index: FragmentHelloWorld/apka/src/main/java/examples/sda/apka/InvestmentFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- FragmentHelloWorld/apka/src/main/java/examples/sda/apka/InvestmentFragment.java	(date 1493242643000)
++++ FragmentHelloWorld/apka/src/main/java/examples/sda/apka/InvestmentFragment.java	(revision )
+@@ -2,6 +2,8 @@
+ 
+ 
+ import android.app.Fragment;
++import android.icu.text.DecimalFormat;
++import android.icu.text.NumberFormat;
+ import android.os.Bundle;
+ import android.view.LayoutInflater;
+ import android.view.View;
+@@ -85,8 +87,10 @@
+         return view;
+     }
+     void oblicz(){
+-        sumaKapitalX.setText ("   "+Double.toString ((r*12*l)+w));
+-        sumaOdsetkiX.setText ("   "+Double.toString ((r*12*l*odsetka)-(r*12*l)));
+-        sumaWynikX.setText ("   "+Double.toString ((r*12*l*odsetka)+w));
++        NumberFormat numberFormat = NumberFormat.getInstance();
++        DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
++        sumaKapitalX.setText ("   "+twoDecimalForm.format((r*12*l)+w));
++        sumaOdsetkiX.setText ("   "+twoDecimalForm.format((r*12*l*odsetka)-(r*12*l)));
++        sumaWynikX.setText ("   "+twoDecimalForm.format((r*12*l*odsetka)+w));
+     }
+ }
+Index: FragmentHelloWorld/apka/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- FragmentHelloWorld/apka/build.gradle	(date 1493242643000)
++++ FragmentHelloWorld/apka/build.gradle	(revision )
+@@ -6,8 +6,8 @@
+ 
+     defaultConfig {
+         applicationId "examples.sda.apka"
+-        minSdkVersion 15
+-        targetSdkVersion 25
++        minSdkVersion 11
++        targetSdkVersion 24
+         versionCode 1
+         versionName "1.0"
+ 
+Index: FragmentHelloWorld/apka/src/main/java/examples/sda/apka/CurenncyCalculatorFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- FragmentHelloWorld/apka/src/main/java/examples/sda/apka/CurenncyCalculatorFragment.java	(date 1493242643000)
++++ FragmentHelloWorld/apka/src/main/java/examples/sda/apka/CurenncyCalculatorFragment.java	(revision )
+@@ -1,7 +1,9 @@
+ package examples.sda.apka;
+ 
+ 
++
+ import android.app.Fragment;
++import android.icu.text.DecimalFormat;
+ import android.icu.text.NumberFormat;
+ import android.os.Bundle;
+ import android.view.LayoutInflater;
+@@ -9,7 +11,6 @@
+ import android.view.ViewGroup;
+ import android.widget.Button;
+ import android.widget.EditText;
+-import android.widget.RadioButton;
+ import android.widget.RadioGroup;
+ import android.widget.TextView;
+ 
+@@ -46,11 +47,18 @@
+                 };
+                 return kurs;
+             }
++
+             private String Calculate(String input) {
+                 try{
+                 double tmp = Double.valueOf(input);
+                 double tmp1 = (double)tmp*kurs;
+-                wynik = Double.toString(tmp1);
++                    NumberFormat numberFormat = NumberFormat.getInstance();
++//                    if (numberFormat instanceof DecimalFormat) {
++//                        ((DecimalFormat) numberFormat).setDecimalSeparatorAlwaysShown(true);
++//                    }else{
++                        DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
++                        wynik = twoDecimalForm.format(tmp1);
++//                    }
+                 } catch (NumberFormatException e){
+                     wynik = getString(R.string.upsss);
+                     return wynik;
