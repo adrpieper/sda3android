@@ -5,4 +5,6 @@
     <string name="button2">Button</string>
     <string name="currency_calculator">Kalkulator Walut</string>
     <string name="investment">Lokata</string>
+    <string name="animations_examples">Animacje</string>
+    <string name="animate">Animuj</string>
 </resources>
