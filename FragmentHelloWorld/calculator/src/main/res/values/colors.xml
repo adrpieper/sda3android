@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#57ad6b</color>
+    <color name="colorAccent">#FF4081</color>
 
-    <color name="buttonDefault">#57ad6b</color>
-    <color name="buttonDisabled">#303F9F</color>
-    <color name="buttonPressed">#ad5779</color>
+    <color name="buttonDefault">#b4d5e3</color>
+    <color name="buttonPressed">#028b02</color>
+    <color name="buttonDisabled">#ac8abe</color>
 </resources>
