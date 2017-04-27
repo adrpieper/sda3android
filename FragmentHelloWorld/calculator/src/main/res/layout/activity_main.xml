@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/buttonPressed"
     android:orientation="horizontal"
     tools:context="examples.sda.calculator.MainActivity">
 
@@ -11,7 +12,7 @@
         android:id="@+id/fragment"
         android:name="examples.sda.calculator.ButtonsFragment"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:layout="@layout/fragment_buttons" />
 
