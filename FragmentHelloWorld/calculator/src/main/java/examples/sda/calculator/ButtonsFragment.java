@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-
+/**
+ * Created by Adrian on 2017-04-25.
+ */
 
 public class ButtonsFragment extends Fragment {
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
