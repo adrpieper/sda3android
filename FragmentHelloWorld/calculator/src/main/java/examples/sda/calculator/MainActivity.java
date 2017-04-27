@@ -3,10 +3,6 @@ package examples.sda.calculator;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-
-import static android.R.attr.button;
 
 public class MainActivity extends Activity {
 
@@ -18,19 +14,18 @@ public class MainActivity extends Activity {
     }
 
     public void showCurrencyCalculator() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new CurrencyCalculatorFragment());
-        transaction.commit();
+        showFragment(new CurrencyCalculatorFragment());
     }
 
     public void showInvestmentForm() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new InvestmentFragment());
-        transaction.commit();
-
+        showFragment(new InvestmentFragment());
     }
 
     public void showAnimationsExamples() {
+        showFragment(new AnimationsFragment());
+    }
+
+    private void showFragment(Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentFrame, new AnimationsFragment());
         transaction.commit();
