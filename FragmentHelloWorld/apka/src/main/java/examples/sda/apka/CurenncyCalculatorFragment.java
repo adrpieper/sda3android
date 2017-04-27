@@ -1,7 +1,9 @@
 package examples.sda.apka;
 
 
+
 import android.app.Fragment;
+import android.icu.text.DecimalFormat;
 import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -46,11 +47,18 @@ public class CurenncyCalculatorFragment extends Fragment {
                 };
                 return kurs;
             }
+
             private String Calculate(String input) {
                 try{
                 double tmp = Double.valueOf(input);
                 double tmp1 = (double)tmp*kurs;
-                wynik = Double.toString(tmp1);
+                    NumberFormat numberFormat = NumberFormat.getInstance();
+//                    if (numberFormat instanceof DecimalFormat) {
+//                        ((DecimalFormat) numberFormat).setDecimalSeparatorAlwaysShown(true);
+//                    }else{
+                        DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
+                        wynik = twoDecimalForm.format(tmp1);
+//                    }
                 } catch (NumberFormatException e){
                     wynik = getString(R.string.upsss);
                     return wynik;

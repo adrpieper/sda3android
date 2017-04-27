@@ -2,6 +2,8 @@ package examples.sda.apka;
 
 
 import android.app.Fragment;
+import android.icu.text.DecimalFormat;
+import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -85,8 +87,10 @@ public class InvestmentFragment extends Fragment {
         return view;
     }
     void oblicz(){
-        sumaKapitalX.setText ("   "+Double.toString ((r*12*l)+w));
-        sumaOdsetkiX.setText ("   "+Double.toString ((r*12*l*odsetka)-(r*12*l)));
-        sumaWynikX.setText ("   "+Double.toString ((r*12*l*odsetka)+w));
+        NumberFormat numberFormat = NumberFormat.getInstance();
+        DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
+        sumaKapitalX.setText ("   "+twoDecimalForm.format((r*12*l)+w));
+        sumaOdsetkiX.setText ("   "+twoDecimalForm.format((r*12*l*odsetka)-(r*12*l)));
+        sumaWynikX.setText ("   "+twoDecimalForm.format((r*12*l*odsetka)+w));
     }
 }
