@@ -7,4 +7,5 @@
     <string name="src_currency">Calculate from:</string>
     <string name="dst_currency">Calculate to:</string>
     <string name="calculate">Calculate</string>
+    <string name="animate">Animate</string>
 </resources>
