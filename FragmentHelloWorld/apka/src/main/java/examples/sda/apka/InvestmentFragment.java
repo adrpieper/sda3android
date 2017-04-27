@@ -87,10 +87,9 @@ public class InvestmentFragment extends Fragment {
         return view;
     }
     void oblicz(){
-        NumberFormat numberFormat = NumberFormat.getInstance();
         DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
-        sumaKapitalX.setText ("   "+twoDecimalForm.format((r*12*l)+w));
-        sumaOdsetkiX.setText ("   "+twoDecimalForm.format((r*12*l*odsetka)-(r*12*l)));
-        sumaWynikX.setText ("   "+twoDecimalForm.format((r*12*l*odsetka)+w));
+        sumaKapitalX.setText (("   "+twoDecimalForm.format((r*12*l)+w)).replace(".",","));
+        sumaOdsetkiX.setText (("   "+twoDecimalForm.format((r*12*l*odsetka)-(r*12*l))).replace(".",","));
+        sumaWynikX.setText (("   "+twoDecimalForm.format((r*12*l*odsetka)+w)).replace(".",","));
     }
 }

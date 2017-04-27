@@ -33,6 +33,7 @@ public class CurenncyCalculatorFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String tmp = pln.getText().toString();
+                tmp = tmp.replace(",",".");
                 setKurs(gr.getCheckedRadioButtonId());
                 Calculate(tmp);
                 wal.setText(wynik);
@@ -52,12 +53,13 @@ public class CurenncyCalculatorFragment extends Fragment {
                 try{
                 double tmp = Double.valueOf(input);
                 double tmp1 = (double)tmp*kurs;
-                    NumberFormat numberFormat = NumberFormat.getInstance();
+//                    NumberFormat numberFormat = NumberFormat.getInstance();
 //                    if (numberFormat instanceof DecimalFormat) {
 //                        ((DecimalFormat) numberFormat).setDecimalSeparatorAlwaysShown(true);
 //                    }else{
                         DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
                         wynik = twoDecimalForm.format(tmp1);
+                    wynik = wynik.replace(".",",");
 //                    }
                 } catch (NumberFormatException e){
                     wynik = getString(R.string.upsss);
