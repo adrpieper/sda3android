@@ -3,63 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
-        android:id="@+id/lokataTextView"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lokata"
-        android:textAlignment="center"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/lataTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lata" />
-
-    <EditText
-        android:id="@+id/lataEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/kwotaTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kwota" />
-
-    <EditText
-        android:id="@+id/kwotaEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/procentTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Procent" />
-
-    <EditText
-        android:id="@+id/procentEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/zyskTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Zysk" />
-
-    <Button
-        android:id="@+id/calculateLokata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="@string/investment" />
 </LinearLayout>
