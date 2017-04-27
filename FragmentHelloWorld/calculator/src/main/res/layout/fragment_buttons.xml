@@ -8,11 +8,11 @@
         android:id="@+id/investmentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/investment" />
 
     <Button
         android:id="@+id/currencyCalculatorButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/currency_calculator" />
 </LinearLayout>

@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import static android.R.attr.button;
-
 /**
  * Created by Adrian on 2017-04-25.
  */

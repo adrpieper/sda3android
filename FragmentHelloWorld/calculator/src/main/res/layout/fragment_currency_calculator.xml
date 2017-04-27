@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,43 +14,11 @@
         android:id="@+id/calcButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/calcButton" />
+        android:text="Button" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Kalkulator Walut" />
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="39dp"
-            android:text="Wpisana kwota [PLN]"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/amountEditText"
-            android:layout_width="168dp"
-            android:layout_height="46dp"
-            android:ems="10"
-            android:inputType="number"
-            android:text="@string/Name"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="71dp" />
-
-        <Button
-            android:id="@+id/calcButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Convert"
-            tools:layout_editor_absoluteX="225dp"
-            tools:layout_editor_absoluteY="71dp" />
-    </android.support.constraint.ConstraintLayout>
 </LinearLayout>
