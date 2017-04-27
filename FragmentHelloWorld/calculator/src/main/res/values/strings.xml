@@ -5,4 +5,6 @@
     <string name="calculator_button">Button</string>
     <string name="currency_button">Button</string>
     <string name="currency_button_2">button</string>
+    <string name="calc">button</string>
+    <string name="amount">button</string>
 </resources>
