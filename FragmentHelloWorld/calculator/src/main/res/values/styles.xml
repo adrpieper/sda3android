@@ -2,11 +2,16 @@
 
     <!-- Baase application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+
     </style>
-    <style name="Mybutton">
+    <style name="Mybutton" parent="android:Widget.Holo.Button">
         <item name="android:background">@drawable/button_background</item>
         <item name="android:textSize">32sp</item>
         <item name="android:textColor">@color/buttonPressed</item>
+    </style>
+
+    <style name="Mybutton.MyBigButton">
+        <item name="android:height">32sp</item>
 
 
     </style>
