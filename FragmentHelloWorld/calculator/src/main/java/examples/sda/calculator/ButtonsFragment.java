@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import static android.R.attr.button;
 
 /**
  * Created by Adrian on 2017-04-25.
@@ -29,6 +33,8 @@ public class ButtonsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.example_animation);
+                button.startAnimation(animation);
             }
         });
 
