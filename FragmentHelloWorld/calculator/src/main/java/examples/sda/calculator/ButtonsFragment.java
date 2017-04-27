@@ -27,18 +27,20 @@ public class ButtonsFragment extends Fragment {
             }
         });
 
-        final View button = view.findViewById(R.id.currencyCalculatorButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.currencyCalculatorButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
-                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.example_animation);
-                button.startAnimation(animation);
             }
         });
 
 
-
+        view.findViewById(R.id.animationButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showAnimationsExamples();
+            }
+        });
 
         return view;
     }
