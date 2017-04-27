@@ -1,7 +1,5 @@
 package examples.sda.apka;
 
-
-
 import android.app.Fragment;
 import android.icu.text.DecimalFormat;
 import android.icu.text.NumberFormat;
@@ -13,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CurenncyCalculatorFragment extends Fragment {
 
@@ -53,17 +52,11 @@ public class CurenncyCalculatorFragment extends Fragment {
                 try{
                 double tmp = Double.valueOf(input);
                 double tmp1 = (double)tmp*kurs;
-//                    NumberFormat numberFormat = NumberFormat.getInstance();
-//                    if (numberFormat instanceof DecimalFormat) {
-//                        ((DecimalFormat) numberFormat).setDecimalSeparatorAlwaysShown(true);
-//                    }else{
                         DecimalFormat twoDecimalForm = new DecimalFormat("0.00 zł");
                         wynik = twoDecimalForm.format(tmp1);
                     wynik = wynik.replace(".",",");
-//                    }
                 } catch (NumberFormatException e){
-                    wynik = getString(R.string.upsss);
-                    return wynik;
+                    Toast.makeText(view.getContext (),"Proszę wprowadzić cyfry.",Toast.LENGTH_LONG).show();
                 }
                 return wynik;
             }
