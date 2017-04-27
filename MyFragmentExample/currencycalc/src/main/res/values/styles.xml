@@ -5,4 +5,16 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="MyButtonTheme" parent="android:Widget.Holo.Button">
+
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#d32f2f</item>
+        <!--item name="android:textColor">#212121</item-->
+    </style>
+
+    <style name="MyButtonTheme.MyBigButtonTheme">
+        <item name="android:height">92dp</item>
+    </style>
+
 </resources>

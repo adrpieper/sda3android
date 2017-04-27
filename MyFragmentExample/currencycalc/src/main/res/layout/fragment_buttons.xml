@@ -8,14 +8,12 @@
         android:id="@+id/calc_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
         android:text="@string/calculate_currency" />
 
     <Button
         android:id="@+id/invest_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
         android:enabled="false"
         android:text="@string/calculate_investment" />
 
@@ -23,6 +21,7 @@
         android:id="@+id/animate_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/animate" />
+        android:text="@string/animate"
+        style="@style/MyButtonTheme.MyBigButtonTheme"/>
 
 </LinearLayout>
