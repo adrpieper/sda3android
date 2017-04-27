@@ -1,6 +1,7 @@
 package examples.sda.calculator;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
@@ -14,20 +15,21 @@ public class MainActivity extends Activity {
     }
 
     public void showCurrencyCalculator() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new CurrencyCalculatorFragment());
-        transaction.commit();
+        showFragment(new CurrencyCalculatorFragment());
     }
 
     public void showInvestmentForm() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new InvestmentFragment());
-        transaction.commit();
+        showFragment(new InvestmentFragment());
     }
 
     public void showAnimationsExamples() {
+        showFragment(new AnimationsFragment());
+    }
+
+    private void showFragment(Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new AnimationsFragment());
+        transaction.setCustomAnimations(R.animator.fragment_in, R.animator.fragment_out);
+        transaction.replace(R.id.fragmentFrame, fragment);
         transaction.commit();
     }
 }
