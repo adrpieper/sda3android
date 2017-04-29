@@ -1,4 +1,4 @@
-package examples.sda.listviewexample;
+package examples.sda.personlist;
 
 /**
  * Created by RENT on 2017-04-29.

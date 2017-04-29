@@ -1,4 +1,4 @@
-package examples.sda.listviewexample;
+package examples.sda.personlist;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 public class MainActivity extends Activity {

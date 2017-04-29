@@ -1,4 +1,4 @@
-package examples.sda.listviewexample;
+package examples.sda.personlist;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
