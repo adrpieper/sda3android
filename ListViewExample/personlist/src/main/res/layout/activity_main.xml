@@ -12,7 +12,9 @@
         android:id="@+id/sortSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch" />
+        android:showText="false"
+        android:text="Sortowanie"
+        android:textIsSelectable="false" />
 
     <ListView
         android:id="@+id/personList"
