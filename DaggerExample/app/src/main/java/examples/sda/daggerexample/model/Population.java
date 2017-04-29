@@ -1,5 +1,6 @@
 package examples.sda.daggerexample.model;
 
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -7,6 +8,8 @@ import javax.inject.Singleton;
  * Created by Medard on 2017-04-29.
  */
 @Singleton
+
+
 public class Population {
 
     private static final int TAX_PERCENT = 10;

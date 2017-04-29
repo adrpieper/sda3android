@@ -7,6 +7,7 @@ import javax.inject.Singleton;
  * Created by Medard on 2017-04-29.
  */
 @Singleton
+
 public class Economy {
     private final Army army;
     private final Building building;

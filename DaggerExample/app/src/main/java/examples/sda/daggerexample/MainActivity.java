@@ -18,8 +18,12 @@ public class MainActivity extends Activity {
         final TextView goldTextView = (TextView) findViewById(R.id.goldTextView);
         Button balanceButton = (Button) findViewById(R.id.balanceButton);
 
+
         StateComponent stateComponent = DaggerStateComponent.create();
         final State state = stateComponent.state();
+
+        final State state = StateProvider.provide();
+
 
         goldTextView.setText("gold : "+state.getGold());
 
@@ -30,6 +34,5 @@ public class MainActivity extends Activity {
                 goldTextView.setText("gold : "+state.getGold());
             }
         });
-
     }
 }

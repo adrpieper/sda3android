@@ -8,17 +8,15 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class Building {
-
-    @Inject
-    public Building(){
-
-    }
-
     public int countProduction() {
         return 1000;
     }
 
     public int countCost() {
         return 100;
+    }
+    @Inject
+    public Building() {
+
     }
 }
