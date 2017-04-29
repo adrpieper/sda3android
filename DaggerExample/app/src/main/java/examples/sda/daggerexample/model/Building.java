@@ -17,6 +17,6 @@ public class Building {
     }
 
     public int countCost() {
-        return 1000;
+        return 100;
     }
 }
