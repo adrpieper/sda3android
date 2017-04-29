@@ -5,4 +5,11 @@ package examples.sda.daggerexample.model;
  */
 
 public class Building {
+    public int countProduction() {
+    return 1000;
+    }
+
+    public int countCost() {
+        return 1000;
+    }
 }
