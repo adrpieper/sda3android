@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyListViewExample</string>
+    <string name="numbers_list">Lista liczb</string>
+</resources>

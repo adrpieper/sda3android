@@ -18,7 +18,8 @@ public class MainActivity extends Activity {
         final TextView goldTextView = (TextView) findViewById(R.id.gold_text_view);
         Button balanceButton = (Button) findViewById(R.id.balance_button);
 
-        final State state = StateProvider.provide();
+        StateComponent stateComponent = DaggerStateComponent.create();
+        final State state = stateComponent.state();
 
         // musimy tu jako arg zapodać String bo inaczej (gdy damy int) metoda settext poszuka nam zasobu
         goldTextView.setText("gold: " + state.getGold());
