@@ -1,11 +1,12 @@
 package examples.sda.daggerexample.model;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Created by Przemysław on 2017-04-29.
  */
-
+@Singleton
 public class Economy {
     private final Army army;
     private final Population population;
