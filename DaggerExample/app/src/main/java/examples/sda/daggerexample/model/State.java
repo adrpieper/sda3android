@@ -1,11 +1,13 @@
 package examples.sda.daggerexample.model;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Created by Adrian on 2017-04-29.
  */
 
+@Singleton
 public class State {
     private final Economy economy;
     private int gold = 1000;
