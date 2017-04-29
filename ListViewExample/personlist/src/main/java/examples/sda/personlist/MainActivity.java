@@ -2,7 +2,6 @@ package examples.sda.personlist;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,7 @@ public class MainActivity extends Activity {
         ListView personListView = (ListView) findViewById(R.id.personList);
         Switch sortSwitch = (Switch) findViewById(R.id.sortSwitch);
 
-        PersonProvider personProvider = new PersonProvider();
+        PersonProvider personProvider = new PersonFromFileProvider(getResources());
         final List<Person> personList = personProvider.provide();
 
 
