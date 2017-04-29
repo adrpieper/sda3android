@@ -18,9 +18,11 @@ public class MainActivity extends Activity {
 
         ListView numbersListView = (ListView) findViewById(R.id.numbersListView);
         numbersListView.setAdapter(new NumbersAdapter());
+        ListView charsListView = (ListView) findViewById(R.id.charsListView);
+        charsListView.setAdapter(new CharsAdapter());
     }
 
-    class NumbersAdapter extends BaseAdapter {
+    class CharsAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -30,6 +32,32 @@ public class MainActivity extends Activity {
         @Override
         public Object getItem(int position) {
             return (char) (position+'a');
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            TextView textView = new TextView(MainActivity.this);
+            textView.setText(getItem(position).toString());
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
+            return textView;
+        }
+    }
+
+    class NumbersAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return 1000;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return position + 1;
         }
 
         @Override
