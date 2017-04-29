@@ -50,7 +50,14 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView tw = new TextView(MainActivity.this);
+            TextView tw;
+
+            if (convertView == null) {
+                tw = new TextView(MainActivity.this);
+            }
+            else {
+                tw = (TextView) convertView;
+            }
 
             // tu już nie muszę rzutować bo metoda getItem zwraca obiekt klasy Person
             Person person = getItem(position);
