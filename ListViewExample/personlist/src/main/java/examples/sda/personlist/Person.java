@@ -1,16 +1,25 @@
 package examples.sda.personlist;
 
 /**
- * Created by Medard on 2017-04-29.
+ * Created by Adrian on 2017-04-29.
  */
 
 public class Person {
+    private String name;
+    private int age;
 
-    private final String name;
-    private final int age;
+    public Person() {}
 
     public Person(String name, int age) {
         this.name = name;
+        this.age = age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 
