@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/buttonDisabled"
+        style="@style/MyButton"
         android:text="@string/investment" />
 
     <Button
         android:id="@+id/currencyCalculatorButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/MyButton"
         android:text="@string/currency_calculator" />
 
     <Button

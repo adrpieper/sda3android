@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-/**
- * Created by Adrian on 2017-04-27.
- */
+
 
 public class AnimationsFragment extends Fragment {
 

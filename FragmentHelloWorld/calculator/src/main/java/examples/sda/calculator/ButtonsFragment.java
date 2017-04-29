@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-/**
- * Created by Adrian on 2017-04-25.
- */
+
 
 public class ButtonsFragment extends Fragment {
+
+    private View button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class ButtonsFragment extends Fragment {
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
                 Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.example_animation);
+                
                 button.startAnimation(animation);
             }
         });
