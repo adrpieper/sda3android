@@ -3,6 +3,7 @@ package examples.sda.personlist;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -30,15 +31,17 @@ public class MainActivity extends Activity {
             }
         });
 
-        PersonAdapter personAdapter = new PersonAdapter(personList);
+        PersonAdapter personAdapter = new PersonAdapter(personList, LayoutInflater.from(this));
         personListView.setAdapter(personAdapter);
     }
 
     class PersonAdapter extends BaseAdapter {
         private final List<Person> personList;
+        private final LayoutInflater layoutInflater;
 
-        public PersonAdapter(List<Person> personList) {
+        public PersonAdapter(List<Person> personList, LayoutInflater layoutInflater) {
             this.personList = personList;
+            this.layoutInflater = layoutInflater;
         }
 
         @Override
@@ -59,17 +62,19 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            TextView textView;
+            View personView;
             if (convertView == null) {
-                textView = new TextView(MainActivity.this);
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
+                personView = layoutInflater.inflate(R.layout.person_list_item, parent, false);
             }
             else {
-                textView = (TextView) convertView;
+                personView = convertView;
             }
+            TextView nameTextView = (TextView) personView.findViewById(R.id.nameTextView);
+            TextView ageTextView = (TextView) personView.findViewById(R.id.ageTextView);
             Person person = getItem(position);
-            textView.setText(person.getName() + ' ' + person.getAge());
-            return textView;
+            nameTextView.setText(person.getName());
+            ageTextView.setText(Integer.toString(person.getAge()));
+            return personView;
         }
     }
 }
