@@ -13,6 +13,7 @@ public class PersonProvider {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Jan", 20));
         persons.add(new Person("Halina", 25));
+        persons.add(new Person("Adam", 9));
         return persons;
     }
 }
