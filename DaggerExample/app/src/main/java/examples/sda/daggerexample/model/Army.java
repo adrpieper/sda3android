@@ -15,7 +15,7 @@ public class Army {
     public Army(Population population) {
         this.population = population;
     }
-    public int countCost(){
-        return population.getCount()*PERCENT_OF_ACTIVE_SOLDIERS/100 * COST_PER_SOLDIER;
+    public int countCost() {
+        return population.getCou() * PERCENT_OF_ACTIVE_SOLDIERS/100 * COST_PER_SOLDIER;
     }
 }
