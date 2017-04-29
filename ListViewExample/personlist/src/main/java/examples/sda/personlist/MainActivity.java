@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import static android.os.Build.VERSION_CODES.N;
 
 public class MainActivity extends Activity {
@@ -19,12 +21,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PersonProvider personProvider = new PersonProvider();
+        final List<Person> personList = personProvider.provide();
 
-
-        ListView personsListView = (ListView) findViewById(R.id.personsListView);
-        personsListView.setAdapter(new NumberAdapter());
     }
-    class NumberAdapter extends BaseAdapter {
+    class personAdapter extends BaseAdapter {
+    private final List<Person> personList;
 
         @Override
         public int getCount() {

@@ -8,18 +8,13 @@ import java.util.List;
  */
 
 public class PersonProvider {
-    private List<Person> personList;
-
-    public PersonProvider(){
-        personList = new ArrayList<>();
-    }
-    public void add(Person person){
-        personList.add(person);
-
+    private List<Person> provide(){
+        List<Person> persons = new ArrayList<>();
+        persons.add(new Person("Jan", 20));
+        persons.add(new Person("Halina", 25));
+        return persons;
     }
 
-    public void setUp(){
-    Person person = new Person ("Rafał", "Strzyz", "rwo@wp.pl", 32)
-    }
+
 
 }
