@@ -7,6 +7,8 @@
     tools:context="examples.sda.listviewexample.MainActivity"
     android:orientation="vertical">
 
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -20,5 +22,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
+        android:layout_weight="3"
         />
+
+    <Switch
+        android:id="@+id/toggleButton_sort"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Switch"
+        android:layout_weight="1"
+        android:padding="20dp"
+        />
+
+
 </LinearLayout>
