@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.Collections;
@@ -21,18 +23,30 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView personListView = (ListView) findViewById(R.id.personList);
+        Switch sortSwitch = (Switch) findViewById(R.id.sortSwitch);
 
         PersonProvider personProvider = new PersonProvider();
         final List<Person> personList = personProvider.provide();
-        Collections.sort(personList, new Comparator<Person>() {
+
+
+        final PersonAdapter personAdapter = new PersonAdapter(personList, LayoutInflater.from(this));
+        personListView.setAdapter(personAdapter);
+
+        sortSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public int compare(Person p1, Person p2) {
-                return p2.getAge() - p1.getAge();
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                final int sing = isChecked ? 1 : -1;
+                Collections.sort(personList, new Comparator<Person>() {
+                    @Override
+                    public int compare(Person o1, Person o2) {
+                        return sing * (o1.getAge() - o2.getAge());
+                    }
+                });
+                personAdapter.notifyDataSetChanged();
             }
         });
 
-        PersonAdapter personAdapter = new PersonAdapter(personList, LayoutInflater.from(this));
-        personListView.setAdapter(personAdapter);
+
     }
 
     class PersonAdapter extends BaseAdapter {

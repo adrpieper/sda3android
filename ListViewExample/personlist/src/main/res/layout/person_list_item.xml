@@ -12,8 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:gravity="center"
         android:text="TextView"
-        android:gravity="center"/>
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/ageTextView"
