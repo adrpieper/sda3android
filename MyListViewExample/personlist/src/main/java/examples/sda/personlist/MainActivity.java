@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
         }
 
         @Override
-        public Object getItem(int position) {
-//            return people.get(position);
+        // możemy poniżej bezpiecznie zmienić typ z Object na Person (rzutować w dół)
+        public Person getItem(int position) {
             return people.get(position);
         }
 
@@ -52,11 +52,15 @@ public class MainActivity extends Activity {
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView tw = new TextView(MainActivity.this);
 
-            String personString = people.get(position).getName() + " " +
-                    people.get(position).getLastName() + ", lat " +
-                    people.get(position).getAge();
+            // tu już nie muszę rzutować bo metoda getItem zwraca obiekt klasy Person
+            Person person = getItem(position);
+
+            String personString = person.getName() + " " +
+                    person.getLastName() + ", lat " +
+                    person.getAge();
 
             tw.setText(personString);
+            tw.setTextSize(24);
 
             return tw;
         }
