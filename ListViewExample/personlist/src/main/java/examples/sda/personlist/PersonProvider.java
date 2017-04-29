@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public class PersonProvider {
-    private List<Person> provide(){
+    public List<Person> provide(){
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Jan", 20));
         persons.add(new Person("Halina", 25));

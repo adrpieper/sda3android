@@ -14,28 +14,31 @@ import static android.os.Build.VERSION_CODES.N;
 
 public class MainActivity extends Activity {
 
-    private PersonProvider personProvider;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         PersonProvider personProvider = new PersonProvider();
         final List<Person> personList = personProvider.provide();
+        PersonAdapter personAdapter = new PersonAdapter(personList);
 
     }
-    class personAdapter extends BaseAdapter {
-    private final List<Person> personList;
+
+    class PersonAdapter extends BaseAdapter {
+        private final List<Person> personList;
+
+        public PersonAdapter(List<Person> personList) {
+            this.personList = personList;
+        }
 
         @Override
         public int getCount() {
-            return 1000;
+            return 0;
         }
 
         @Override
         public Object getItem(int position) {
-            return position+1;
+            return null;
         }
 
         @Override
@@ -45,12 +48,7 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-
-            TextView textView = new TextView(MainActivity.this);
-            textView.setText(getItem(position).toString());
-
-            return textView;
+            return null;
         }
     }
-
 }
