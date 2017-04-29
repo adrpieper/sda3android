@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="examples.sda.listviewperson.MainActivity">
+    tools:context="examples.sda.listviewperson.MainActivity"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="match_parent"
@@ -19,6 +20,14 @@
     <ListView
         android:id="@+id/peopleList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="328dp"
+        android:layout_weight="0.10" />
+
+    <Switch
+        android:id="@+id/sortSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Switch"
+        android:layout_weight="0.90" />/>
 
 </LinearLayout>
