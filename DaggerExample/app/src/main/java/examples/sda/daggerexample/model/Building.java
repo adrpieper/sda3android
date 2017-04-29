@@ -1,9 +1,7 @@
 package examples.sda.daggerexample.model;
 
-import javax.inject.Inject;
-
 /**
- * Created by RENT on 2017-04-29.
+ * Created by Adrian on 2017-04-29.
  */
 
 public class Building {

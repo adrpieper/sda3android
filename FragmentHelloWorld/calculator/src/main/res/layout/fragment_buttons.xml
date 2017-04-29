@@ -24,5 +24,6 @@
         android:id="@+id/animationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/MyButton.MyBigButton"
         android:text="@string/animations_examples" />
 </LinearLayout>

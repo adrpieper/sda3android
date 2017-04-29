@@ -6,6 +6,9 @@ import examples.sda.daggerexample.model.Economy;
 import examples.sda.daggerexample.model.Population;
 import examples.sda.daggerexample.model.State;
 
+/**
+ * Created by Adrian on 2017-04-29.
+ */
 
 public class StateProvider {
 

@@ -2,6 +2,7 @@ package examples.sda.daggerexample;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,13 +15,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final TextView goldTextView = (TextView) findViewById(R.id.goldTextView);
+        Button balanceButton = (Button) findViewById(R.id.balanceButton);
 
-        TextView goldTextView = (TextView) findViewById(R.id.goldTextView);
-        Button balanceButton = (Button) findViewById(R.id.balanceButton):
+        final State state = StateProvider.provide();
 
-        State state = StateProvider.provide();
+        goldTextView.setText("gold : "+state.getGold());
 
-        goldTextView.setText("gold : " + state.getGold());
+        balanceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                state.countBalance();
+                goldTextView.setText("gold : "+state.getGold());
+            }
+        });
 
     }
 }
