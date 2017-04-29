@@ -5,4 +5,11 @@ package examples.sda.daggerexample.model;
  */
 
 public class State {
+    private final Economy economy;
+    public State(Economy economy) {
+        this.economy = economy;
+    }
+
+
+
 }
