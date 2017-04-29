@@ -1,1 +1,1 @@
-include ':app', ':pressonlist'
+include ':app', ':personlist'
