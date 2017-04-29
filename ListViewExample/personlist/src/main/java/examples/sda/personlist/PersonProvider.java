@@ -19,7 +19,7 @@ public class PersonProvider {
     }
 
     public void setUp(){
-
+    Person person = new Person ("Rafał", "Strzyz", "rwo@wp.pl", 32)
     }
 
 }
