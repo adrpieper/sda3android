@@ -5,4 +5,13 @@ package examples.sda.daggerexample.model;
  */
 
 public class Economy {
+    private final Army army;
+    private final Building building;
+    private final Population population;
+
+    public Economy(Army army, Building building, Population population) {
+        this.army = army;
+        this.building = building;
+        this.population = population;
+    }
 }
