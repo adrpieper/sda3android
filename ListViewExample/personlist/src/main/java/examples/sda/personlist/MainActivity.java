@@ -2,11 +2,15 @@ package examples.sda.personlist;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -15,10 +19,19 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListView personListView = (ListView) findViewById(R.id.personList);
+
         PersonProvider personProvider = new PersonProvider();
         final List<Person> personList = personProvider.provide();
-        PersonAdapter personAdapter = new PersonAdapter(personList);
+        Collections.sort(personList, new Comparator<Person>() {
+            @Override
+            public int compare(Person p1, Person p2) {
+                return p2.getAge() - p1.getAge();
+            }
+        });
 
+        PersonAdapter personAdapter = new PersonAdapter(personList);
+        personListView.setAdapter(personAdapter);
     }
 
     class PersonAdapter extends BaseAdapter {
@@ -34,7 +47,7 @@ public class MainActivity extends Activity {
         }
 
         @Override
-        public Object getItem(int position) {
+        public Person getItem(int position) {
             return personList.get(position);
         }
 
@@ -45,13 +58,17 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView textView = new TextView(MainActivity.this);
 
-            String personString = personList.get(position).getName() + " " +
-                    personList.get(position).getAge();
-
-            textView.setText(personString);
-
+            TextView textView;
+            if (convertView == null) {
+                textView = new TextView(MainActivity.this);
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
+            }
+            else {
+                textView = (TextView) convertView;
+            }
+            Person person = getItem(position);
+            textView.setText(person.getName() + ' ' + person.getAge());
             return textView;
         }
     }
