@@ -22,8 +22,6 @@ public class MainActivity extends Activity {
         StateComponent stateComponent = DaggerStateComponent.create();
         final State state = stateComponent.state();
 
-        final State state = StateProvider.provide();
-
 
         goldTextView.setText("gold : "+state.getGold());
 
