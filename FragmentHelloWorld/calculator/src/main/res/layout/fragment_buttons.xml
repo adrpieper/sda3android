@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/buttonPressed"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -9,12 +10,15 @@
         android:id="@+id/investmentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@drawable/gradient"
         android:text="@string/investment" />
 
     <Button
         android:id="@+id/currencyCalculatorButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
         android:enabled="false"
         android:text="@string/currency_calculator" />
 
@@ -22,6 +26,5 @@
         android:id="@+id/animationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/MyButton.MyBigButton"
         android:text="@string/animations_examples" />
 </LinearLayout>

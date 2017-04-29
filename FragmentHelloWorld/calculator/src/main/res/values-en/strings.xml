@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="currency_calculator">Currency calculator</string>
-    <string name="calc">Calc</string>
-    <string name="amount">Amount</string>
-    <string name="investment">Investment</string>
+    <string name="investment">Inwestment</string>
+    <string name="currency_calculator">Calculate Currency</string>
+    <string name="calculator_button">Calc</string>
+    <string name="currency_button">Amount</string>
+    <string name="currency_button_2">Investment</string>
 </resources>
