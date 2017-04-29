@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -29,12 +30,12 @@ public class MainActivity extends Activity {
 
         @Override
         public int getCount() {
-            return 0;
+            return personList.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return null;
+            return personList.get(position);
         }
 
         @Override
@@ -44,7 +45,14 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+            TextView textView = new TextView(MainActivity.this);
+
+            String personString = personList.get(position).getName() + " " +
+                    personList.get(position).getAge();
+
+            textView.setText(personString);
+
+            return textView;
         }
     }
 }

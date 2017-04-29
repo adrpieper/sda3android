@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PersonList</string>
+    <string name="list_name" />
 </resources>
