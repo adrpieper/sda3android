@@ -6,7 +6,7 @@ package examples.sda.listviewexample;
 
 public class Person {
 
-    private String name;
+    private final String name;
     private int age;
 
     public Person(String name, int age) {
@@ -20,5 +20,9 @@ public class Person {
 
     public int getAge() {
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
