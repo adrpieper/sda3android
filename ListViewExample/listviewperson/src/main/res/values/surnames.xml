@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string-array name="surnames">
+            <item>Ostrouch</item>
+            <item>Kowalczyk</item>
+            <item>Katar</item>
+            <item>Drill</item>
+        </string-array>
+
+</resources>
