@@ -7,14 +7,12 @@ import javax.inject.Inject;
  */
 
 public class Building {
-    private final Building building;
 
-
-    @Inject
-    public Building(Building building) {
-        this.building = building;
+    public int countProduction() {
+        return 1000;
     }
 
-
-
+    public int countCost() {
+        return 100;
+    }
 }

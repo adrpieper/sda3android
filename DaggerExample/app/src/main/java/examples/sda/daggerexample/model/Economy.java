@@ -7,25 +7,22 @@ import javax.inject.Inject;
  */
 
 public class Economy {
-
     private final Army army;
-    private  final Population population;
     private final Building building;
+    private final Population population;
 
     @Inject
-    public Economy(Army army, Population population, Building building) {
+    public Economy(Army army, Building building, Population population) {
         this.army = army;
-        this.population = population;
         this.building = building;
+        this.population = population;
     }
 
-    public int countGain(){
+    public int countGain() {
         return building.countProduction() + population.countTaxes();
     }
-    public  int countCost(){
-        return  building.countCost() + army.countCost();
-    }
 
-
+    public int countCost() {
+        return building.countCost() + army.countCost();
     }
 }

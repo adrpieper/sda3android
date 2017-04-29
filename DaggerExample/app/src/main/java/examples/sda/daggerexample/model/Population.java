@@ -7,14 +7,16 @@ import javax.inject.Inject;
  */
 
 public class Population {
-    private final Population population;
 
+    private static final int TAX_PERCENT = 10;
+    private int count = 1000;
 
-
-    @Inject
-    public Population(Population population) {
-        this.population = population;
+    public int countTaxes() {
+        return getCount() * TAX_PERCENT / 100;
     }
 
-
+    public int getCount() {
+        return count;
+    }
 }
+
