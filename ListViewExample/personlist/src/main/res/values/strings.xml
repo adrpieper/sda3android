@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListViewExample</string>
+    <string name="numbers_list">Lista osób</string>
+    <string name="sort_switch">Sortowanie według wieku</string>
+</resources>
