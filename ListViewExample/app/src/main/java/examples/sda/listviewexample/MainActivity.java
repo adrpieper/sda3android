@@ -41,7 +41,13 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView textView = new TextView(MainActivity.this);
+            TextView textView ;
+            if(convertView == null){
+                textView = new TextView(MainActivity.this);
+            }
+            else{
+                textView = (TextView)convertView;
+            }
             textView.setText(getItem(position).toString());
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
             return textView;
@@ -67,7 +73,13 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView textView = new TextView(MainActivity.this);
+            TextView textView;
+            if(convertView == null){
+                textView = new TextView(MainActivity.this);
+            }
+            else{
+                textView = (TextView)convertView;
+            }
             textView.setText(getItem(position).toString());
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
             return textView;
