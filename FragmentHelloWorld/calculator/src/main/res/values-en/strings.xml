@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="currency_calculator">Currency Calculator</string>
+    <string name="description_what_to_do">Type cash what do you want to calculate</string>
+    <string name="Calculate">calculate</string>
+    <string name="locate">Locate</string>
+    <string name="please_type_digit">Please type digit</string>
+    <string name="you_have">You Have </string>
+</resources>

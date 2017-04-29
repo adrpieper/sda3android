@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="currency_calculator">Kalkulator Walut</string>
+    <string name="description_what_to_do">Wpisz ilośc waluty do przeliczenia [PLN]</string>
+    <string name="Calculate">Przelicz</string>
+    <string name="locate">Lokata</string>
+    <string name="please_type_digit">Prosze wpisać liczbę</string>
+    <string name="you_have">Masz </string>
 </resources>
