@@ -14,6 +14,8 @@ public class PersonProvider {
         persons.add(new Person("Jan", 20));
         persons.add(new Person("Halina", 25));
         persons.add(new Person("Adam", 9));
+        persons.add(new Person("Ala", 10));
+        persons.add(new Person("Dominik", 24));
         return persons;
     }
 }
