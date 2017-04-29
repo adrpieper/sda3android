@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_green_dark"
     android:orientation="vertical"
     tools:context="examples.sda.personlist.MainActivity">
 
@@ -12,7 +13,8 @@
         android:id="@+id/sortSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch" />
+        android:text="Segregacja"
+        android:textAppearance="@android:style/TextAppearance" />
 
     <ListView
         android:id="@+id/personList"
