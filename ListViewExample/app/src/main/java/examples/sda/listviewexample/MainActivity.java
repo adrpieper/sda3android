@@ -41,12 +41,12 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView textView ;
-            if(convertView == null){
+            TextView textView;
+            if (convertView == null) {
                 textView = new TextView(MainActivity.this);
             }
-            else{
-                textView = (TextView)convertView;
+            else {
+                textView = (TextView) convertView;
             }
             textView.setText(getItem(position).toString());
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
@@ -74,11 +74,11 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView textView;
-            if(convertView == null){
+            if (convertView == null) {
                 textView = new TextView(MainActivity.this);
             }
-            else{
-                textView = (TextView)convertView;
+            else {
+                textView = (TextView) convertView;
             }
             textView.setText(getItem(position).toString());
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32);
