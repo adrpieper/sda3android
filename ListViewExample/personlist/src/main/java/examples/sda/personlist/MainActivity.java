@@ -2,7 +2,6 @@ package examples.sda.personlist;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -24,36 +22,40 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView personListView = (ListView) findViewById(R.id.personList);
-        final List<Person> personList = new ArrayList<>();
-        PersonProvider personProvider = new PersonProvider();
-        PersonAdapter personAdapter = new PersonAdapter(personList, LayoutInflater.from(this));
+        Switch sortSwitch = (Switch) findViewById(R.id.sortSwitch);
+
+        PersonProvider personProvider = new PersonFromFileProvider(getResources());
+        final List<Person> personList = personProvider.provide();
+
+
+        final PersonAdapter personAdapter = new PersonAdapter(personList, LayoutInflater.from(this));
         personListView.setAdapter(personAdapter);
 
-        final Switch sortSwitch = (Switch) findViewById(R.id.sortSwitch);
         sortSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true){
+                final int sing = isChecked ? 1 : -1;
                 Collections.sort(personList, new Comparator<Person>() {
                     @Override
-                    public int compare(Person p1, Person p2) {
-                        return p2.getAge() - p1.getAge();
+                    public int compare(Person o1, Person o2) {
+                        return sing * (o1.getAge() - o2.getAge());
                     }
                 });
-            }}
+                personAdapter.notifyDataSetChanged();
+            }
         });
+
+
     }
 
     class PersonAdapter extends BaseAdapter {
+        private final List<Person> personList;
         private final LayoutInflater layoutInflater;
-        private final  personList;
 
         public PersonAdapter(List<Person> personList, LayoutInflater layoutInflater) {
             this.personList = personList;
             this.layoutInflater = layoutInflater;
         }
-        
 
         @Override
         public int getCount() {
