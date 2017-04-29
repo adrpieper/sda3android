@@ -12,6 +12,6 @@
     </style>
     <style name="MyButton.MyBigButton">
         <item name="android:textSize">28sp</item>
-        <item name="android:height">67sp</item>
+        <item name="android:height">97sp</item>
     </style>
 </resources>
