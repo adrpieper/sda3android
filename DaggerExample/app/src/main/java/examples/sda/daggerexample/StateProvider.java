@@ -9,7 +9,7 @@ import examples.sda.daggerexample.model.State;
 
 public class StateProvider {
 
-    public State provide() {
+    public static State provide() {
         Population population = new Population();
         Building building = new Building();
         Army army = new Army(population);
