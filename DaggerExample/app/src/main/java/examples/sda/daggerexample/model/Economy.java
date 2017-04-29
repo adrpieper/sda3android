@@ -26,7 +26,7 @@ public class Economy {
 
     public int countCost() {
 
-        return 0;
+        return building.countCost() + army.countCost();
     }
 
     /**
