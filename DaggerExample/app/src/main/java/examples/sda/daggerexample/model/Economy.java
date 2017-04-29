@@ -19,5 +19,11 @@ public class Economy {
         this.building = building;
     }
 
+    public int countGain(){
+        return building.countProduction() + population.countTaxes();
+    }
+    public  int countCost(){
+        return  building.countCost() + army.countCost();
+    }
 
 }
