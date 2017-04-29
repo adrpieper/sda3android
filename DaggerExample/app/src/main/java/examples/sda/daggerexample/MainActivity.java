@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
+import dagger.Component;
 import examples.sda.daggerexample.model.State;
 
 public class MainActivity extends Activity {

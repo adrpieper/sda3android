@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 /**
  * Created by Adrian on 2017-04-29.
  */
+
 @Singleton
 public class Building {
 

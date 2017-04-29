@@ -6,11 +6,10 @@ import dagger.Component;
 import examples.sda.daggerexample.model.State;
 
 /**
- * Created by RENT on 2017-04-29.
+ * Created by Adrian on 2017-04-29.
  */
 @Singleton
 @Component
 public interface StateComponent {
     State state();
-
 }

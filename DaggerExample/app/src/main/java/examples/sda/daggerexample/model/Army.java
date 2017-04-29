@@ -6,6 +6,7 @@ import javax.inject.Singleton;
 /**
  * Created by Adrian on 2017-04-29.
  */
+
 @Singleton
 public class Army {
     private static final int PERCENT_OF_ACTIVE_SOLDIERS = 8;
