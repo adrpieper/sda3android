@@ -15,6 +15,9 @@ public class Army {
     public Army(Population population) {
         this.population = population;
     }
+        public int countCost(){
+         return population.getCount()+ P
+        }
 
 
 }

@@ -26,4 +26,6 @@ public class Economy {
         return  building.countCost() + army.countCost();
     }
 
+
+    }
 }

@@ -16,8 +16,8 @@ public class State {
     }
 
     public  void countBalance(){
-        gold += economy.conutGain();
-        gold += economy.conutCost();
+        gold += economy.countGain();
+        gold += economy.countCost();
 
     }
 
