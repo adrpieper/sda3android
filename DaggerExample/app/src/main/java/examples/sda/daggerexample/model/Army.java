@@ -1,11 +1,12 @@
 package examples.sda.daggerexample.model;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Created by RENT on 2017-04-29.
  */
-
+@Singleton
 public class Army {
     private static final int PERCENT_OF_ACTIVE_SOLDIERS = 8 ;
     private static final int COST_PER_SOLDIER = 2 ;
@@ -16,6 +17,6 @@ public class Army {
         this.population = population;
     }
     public int countCost() {
-        return population.getCou() * PERCENT_OF_ACTIVE_SOLDIERS/100 * COST_PER_SOLDIER;
+        return population.getCount() * PERCENT_OF_ACTIVE_SOLDIERS/100 * COST_PER_SOLDIER;
     }
 }
