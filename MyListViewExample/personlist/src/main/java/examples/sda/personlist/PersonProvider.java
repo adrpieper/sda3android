@@ -22,7 +22,7 @@ public class PersonProvider {
 
         Person p1 = new Person("Janusz", "Kurczak", 21);
         Person p2 = new Person("Janina", "Szczota", 59);
-        Person p3 = new Person("Jerzy", "Kiler", 21);
+        Person p3 = new Person("Jerzy", "Kiler", 25);
         ppl.add(p1);
         ppl.add(p2);
         ppl.add(p3);

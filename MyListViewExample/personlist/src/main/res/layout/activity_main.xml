@@ -16,6 +16,14 @@
         android:textStyle="bold"
         android:paddingBottom="10dp"/>
 
+    <Switch
+        android:id="@+id/sort_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Posortować?"
+        android:textSize="16dp"
+        android:paddingBottom="10dp"/>
+
     <ListView
         android:id="@+id/ppl_list_view"
         android:layout_width="match_parent"
