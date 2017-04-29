@@ -7,7 +7,7 @@
         android:id="@+id/investmentText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lokata" />
+        android:text="@string/investment" />
 
     <EditText
         android:id="@+id/amountOfMoneyEditText"
@@ -15,13 +15,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:text="Type amount of money" />
+        android:text="@string/Type_amount_of_money" />
 
     <TextView
         android:id="@+id/periodOfTimeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Period of time" />
+        android:text="@string/Period_of_time" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -32,11 +32,11 @@
         android:id="@+id/finalValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Final value" />
+        android:text="@string/Final_value" />
 
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="@string/Calculate" />
 </LinearLayout>

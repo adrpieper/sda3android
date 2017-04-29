@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +29,7 @@ public class CurrencyCalculatorFragment extends Fragment {
     public HashMap<String, Double> map;
     private Resources resources;
     private Spinner spinner;
+    private Animation animation;
 
 
     @Override
@@ -37,7 +40,7 @@ public class CurrencyCalculatorFragment extends Fragment {
 
         final EditText firstValue = (EditText) view.findViewById(R.id.firstValue);
         calculatedNumber = (TextView) view.findViewById(R.id.calculatedValue);
-        Button calculateButton = (Button) view.findViewById(R.id.calculateButton);
+        final Button calculateButton = (Button) view.findViewById(R.id.calculateButton);
         spinner = (Spinner) view.findViewById(R.id.currencySpinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -45,6 +48,7 @@ public class CurrencyCalculatorFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        animation = AnimationUtils.loadAnimation(getActivity(), R.anim.anim);
 
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +58,10 @@ public class CurrencyCalculatorFragment extends Fragment {
                     double numberFromEditText = Double.parseDouble(firstValue.getText().toString());
                     final String calculatedExchangeRate = new Double(calculateExchangeRate(numberFromEditText, spinner.getSelectedItem().toString(), creatingHashMap())).toString();
                     calculatedNumber.setText(calculatedExchangeRate);
+
+                    animation.setRepeatCount(Animation.INFINITE);
+                    animation.setRepeatMode(Animation.REVERSE);
+                    calculateButton.startAnimation(animation);
                 }catch(NumberFormatException e){
                     Toast.makeText(getActivity(), "Type the number pls!", Toast.LENGTH_SHORT).show();
                 }

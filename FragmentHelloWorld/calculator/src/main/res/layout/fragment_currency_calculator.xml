@@ -10,13 +10,13 @@
         android:id="@+id/currencyCalculatorText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Currency Calculator" />
+        android:text="@string/Calculate" />
 
     <TextView
         android:id="@+id/plnTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PLN" />
+        android:text="@string/pln" />
 
     <EditText
         android:id="@+id/firstValue"
@@ -40,5 +40,5 @@
         android:id="@+id/calculateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="@string/Calculate" />
 </LinearLayout>

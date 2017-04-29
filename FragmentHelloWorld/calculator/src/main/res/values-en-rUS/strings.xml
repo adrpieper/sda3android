@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="formularz_inwestycyjny">investment form</string>
+    <string name="kalkulator_walut">currency calculator</string>
+    <string name="pln">pln</string>
+    <string name="kalkuluj">Calculate</string>
+    <string name="lokata">investment</string>
+    <string name="wpisz_ilosc_pieniedzy">Type amount of money</string>
+    <string name="okres_czasu">Period of time</string>
+    <string name="wartosc_finalna">Final value</string>
+</resources>

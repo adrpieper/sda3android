@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/currenencyButton"
+        style="@style/ButtonBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Currency Calculator" />
+        android:text="@string/currency_calculator" />
 
     <Button
         android:id="@+id/investmentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Investment Form" />
+        android:enabled="false"
+        style="@style/ButtonBackground"
+        android:text="@string/investment_form" />
 </LinearLayout>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="investment_form">formularz inwestycyjny</string>
+    <string name="currency_calculator">kalkulator walut</string>
+    <string name="pln">pln</string>
+    <string name="Calculate">kalkuluj</string>
+    <string name="investment">lokata</string>
+    <string name="Type_amount_of_money">wpisz ilosc pieniedzy</string>
+    <string name="Period_of_time">okres czasu</string>
+    <string name="Final_value">wartosc finalna</string>
 </resources>

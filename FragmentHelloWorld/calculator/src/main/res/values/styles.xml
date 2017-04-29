@@ -5,4 +5,9 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="ButtonBackground" parent="android:Widget.Holo.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#d2f700</item>
+    </style>
 </resources>
