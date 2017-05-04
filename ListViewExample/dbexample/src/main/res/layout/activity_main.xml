@@ -1,37 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable name="user" type="examples.sda.dbexample.User"/>
+    </data>
+<LinearLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="examples.sda.dbexample.MainActivity">
 
 
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name" />
+        android:layout_margin="8dp"
+        android:text="@string/name"
+        android:textSize="32sp" />
 
-    <EditText
-        android:id="@+id/nameEditText"
+    <TextView
+        android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/name" />
+        android:layout_margin="8dp"
+        android:textSize="32sp"
+        android:text="@{user.name}"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/age" />
+        android:layout_margin="8dp"
+        android:text="@string/age"
+        android:textSize="32sp" />
 
-    <EditText
-        android:id="@+id/ageEditText"
+    <TextView
+        android:id="@+id/ageTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:text="@string/age" />
+        android:layout_margin="8dp"
+        android:textSize="32sp"
+        android:text="@{String.valueOf(user.age)}" />
+
+    <Button
+        android:id="@+id/nextUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
 </LinearLayout>
+</layout>
