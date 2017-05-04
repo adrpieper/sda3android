@@ -3,6 +3,7 @@ package examples.sda.databindingexample;
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import examples.sda.databindingexample.databinding.ActivityMainBinding;
@@ -10,15 +11,12 @@ import examples.sda.databindingexample.databinding.ActivityMainBinding;
 public class MainActivity extends Activity {
 
     private User user = new User();
-
     SimpleText text = new SimpleText();
-
     private ActivityMainBinding binding;
 
    /* private TextView name;
     private TextView secName;
     private TextView age;*/
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,15 @@ public class MainActivity extends Activity {
         binding.setUser(user);
         binding.setSomething(text);
 
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setName("Maryjan");
+            }
+        });
     }
+
+
 
   /*  private void bindUser(User user){
         binding.textView1.setText(user.getName());
