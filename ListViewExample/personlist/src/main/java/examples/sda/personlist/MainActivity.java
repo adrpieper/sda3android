@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     private PersonProvider personProvider = new PersonProvider();
     private List<Person> personList = personProvider.provide();
     private Switch mySwitch;
-    private LayoutInflater layoutInflater;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 
         mySwitch.setChecked(true);
 
-        final NumbersAdapter adapter = new NumbersAdapter();
+        final NumbersAdapter adapter = new NumbersAdapter(LayoutInflater.from(this));
 
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -56,6 +56,12 @@ public class MainActivity extends Activity {
     }
 
     class NumbersAdapter extends BaseAdapter{
+        private LayoutInflater layoutInflater;
+
+        public NumbersAdapter(LayoutInflater layoutInflater) {
+            this.layoutInflater = layoutInflater;
+        }
+
         @Override
         public int getCount() {
             return personList.size();
@@ -75,15 +81,26 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            TextView textView;
-            if ( convertView == null){
-                textView = new TextView(MainActivity.this);
-            }else{
-                textView = (TextView) convertView;
-            }
+            View personView = layoutInflater.inflate(R.layout.person_list_item, parent, false);
 
-            textView.setText(showPerson(getItem(position)));
-            return textView;
+            if ( convertView == null){
+                personView = layoutInflater.inflate(R.layout.person_list_item, parent, false);
+
+            }else{
+                personView = convertView;
+            }
+            Person person = getItem(position);
+            TextView nameTextView = (TextView) personView.findViewById(R.id.nameTextView);
+            TextView surnameTextView = (TextView) personView.findViewById(R.id.surnameTextView);
+            TextView emailTextView = (TextView) personView.findViewById(R.id.emailTextView);
+            TextView ageTextView = (TextView) personView.findViewById(R.id.ageTextView);
+
+            nameTextView.setText("Name: " + person.getName());
+            surnameTextView.setText("Surname: " + person.getSurname());
+            emailTextView.setText("Email: " + person.getEmail());
+            ageTextView.setText("Age: " + String.valueOf(person.getAge()));
+
+            return personView;
         }
 
         public String showPerson(Person person){
