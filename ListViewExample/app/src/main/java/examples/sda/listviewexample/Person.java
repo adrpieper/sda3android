@@ -4,7 +4,7 @@ package examples.sda.listviewexample;
  * Created by RENT on 2017-04-29.
  */
 
-public class Person {
+public class Person{
     private String name;
     private int age;
 
