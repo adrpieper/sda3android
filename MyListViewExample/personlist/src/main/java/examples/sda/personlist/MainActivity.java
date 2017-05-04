@@ -1,6 +1,7 @@
 package examples.sda.personlist;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import examples.sda.personlist.databinding.PersonListItemBinding;
 
 public class MainActivity extends Activity {
 
@@ -75,18 +77,26 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             //TextView tw;
-            View personView;
+//            View personView;
+
+            PersonListItemBinding binding;
 
             if (convertView == null) {
 //                tw = new TextView(MainActivity.this);
 //                tw.setTextSize(24);
-                personView = layoutInflater.inflate(R.layout.person_list_item, parent, false);
+//                personView = layoutInflater.inflate(R.layout.person_list_item, parent, false);
+
+                // ta linijka jest bardzo przydatna
+                binding = PersonListItemBinding.inflate(layoutInflater);
             }
             else {
-                personView = convertView;
+//                personView = convertView;
+                binding = DataBindingUtil.getBinding(convertView);
             }
 
-            // tu już nie muszę rzutować bo metoda getItem zwraca obiekt klasy Person
+            binding.setPerson(getItem(position));
+
+/*            // tu już nie muszę rzutować bo metoda getItem zwraca obiekt klasy Person
             Person person = getItem(position);
             TextView nameTextView = (TextView) personView.findViewById(R.id.name_text_view);
             TextView ageTextView = (TextView) personView.findViewById(R.id.age_text_view);
@@ -95,12 +105,12 @@ public class MainActivity extends Activity {
             lastNameTW.setText(person.getLastName());
             ageTextView.setText(Integer.toString(person.getAge()));
 
-/*            String personString = person.getName() + " " +
+*//*            String personString = person.getName() + " " +
                     person.getLastName() + ", lat " +
                     person.getAge();
 
             tw.setText(personString);*/
-            return personView;
+            return binding.getRoot();
         }
     }
 }
