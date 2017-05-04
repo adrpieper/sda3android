@@ -16,6 +16,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setUser(new User("Jan", 20));
+        final User user = new User("Jan", 20);
+        binding.setUser(user);
+        binding.nextUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setName("Adam");
+                binding.invalidateAll();
+            }
+        });
     }
 }

@@ -45,5 +45,11 @@
         android:textSize="32sp"
         android:text="@{String.valueOf(user.age)}" />
 
+    <Button
+        android:id="@+id/nextUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
 </LinearLayout>
 </layout>
