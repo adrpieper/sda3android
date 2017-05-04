@@ -17,7 +17,7 @@
         android:textSize="32sp" />
 
     <TextView
-        android:id="@+id/nameEditText"
+        android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -32,7 +32,7 @@
         android:textSize="32sp" />
 
     <TextView
-        android:id="@+id/ageEditText"
+        android:id="@+id/ageTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
