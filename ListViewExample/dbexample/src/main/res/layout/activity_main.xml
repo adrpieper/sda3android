@@ -12,25 +12,29 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name" />
+        android:layout_margin="8dp"
+        android:text="@string/name"
+        android:textSize="32sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/name" />
+        android:layout_margin="8dp"
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/age" />
+        android:layout_margin="8dp"
+        android:text="@string/age"
+        android:textSize="32sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/ageEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="@string/age" />
+        android:layout_margin="8dp"
+        android:textSize="32sp" />
 </LinearLayout>
