@@ -10,23 +10,18 @@ import examples.sda.dbexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
 
-    private TextView nameTextView;
-    private TextView ageTextView;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-        nameTextView = binding.nameTextView;
-        ageTextView = binding.ageTextView;
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bindUser(new User("Jan", 20));
 
     }
 
     private void bindUser(User user) {
-        nameTextView.setText(user.getName());
-        ageTextView.setText(String.valueOf(user.getAge()));
+        binding.nameTextView.setText(user.getName());
+        binding.ageTextView.setText(String.valueOf(user.getAge()));
     }
 }
