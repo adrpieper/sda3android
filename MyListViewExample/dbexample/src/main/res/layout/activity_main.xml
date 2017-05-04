@@ -20,14 +20,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/name"
-        android:paddingBottom="5dp"/>
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:paddingBottom="5dp"
+        android:padding="5dp"
         android:text="@{user.name}" />
 
     <TextView
@@ -35,15 +35,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/age"
-        android:paddingBottom="5dp"/>
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/age_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:paddingBottom="5dp"
+        android:padding="5dp"
         android:text="@{String.valueOf(user.age)}"/>
+
+    <Button
+        android:id="@+id/next_user_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button" />
 
 </LinearLayout>
 </layout>

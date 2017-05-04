@@ -3,6 +3,7 @@ package examples.sda.dbexample;
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
 
 import examples.sda.dbexample.databinding.ActivityMainBinding;
 
@@ -14,7 +15,22 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setUser(new User("Jan", 28));
+        final User user = new User("Jan", 28);
+        binding.setUser(user);
+
+        binding.nextUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // to nie ma sensu
+                //binding.nameTextView.setText(binding.getUser().getName() + " Gołowąs");
+
+                // najprościej tak zmienić treść TextView:
+                //binding.setUser(new User("Paeł", 20));
+
+                user.setName("Adam");
+                binding.invalidateAll();
+            }
+        });
         // no longer necessary!
         //setContentView(R.layout.activity_main);
 

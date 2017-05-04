@@ -1,10 +1,12 @@
 package examples.sda.dbexample;
 
+import android.databinding.BaseObservable;
+
 /**
  * Created by szyms on 5/4/17.
  */
 
-public class User {
+public class User extends BaseObservable {
 
     private String name;
     private int age;
