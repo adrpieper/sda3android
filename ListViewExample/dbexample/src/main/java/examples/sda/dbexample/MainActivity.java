@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 import examples.sda.dbexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
@@ -28,8 +30,9 @@ public class MainActivity extends Activity {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                binding.setUser(new User("Tomasz Nowicki", 50));
+                //binding.setUser(new User("Tomasz Nowicki", 50));
                 user.setName("Ola");
+                user.setAge(new Random().nextInt(30) + 20);
             }
         });
         //bindUser(new User("Jan", 20));
