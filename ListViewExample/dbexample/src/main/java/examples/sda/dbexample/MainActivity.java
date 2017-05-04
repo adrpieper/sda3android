@@ -1,9 +1,12 @@
 package examples.sda.dbexample;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import examples.sda.dbexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
 
@@ -13,12 +16,13 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        nameTextView = (TextView) findViewById(R.id.nameTextView);
-        ageTextView = (TextView) findViewById(R.id.ageTextView);
+        nameTextView = binding.nameTextView;
+        ageTextView = binding.ageTextView;
 
         bindUser(new User("Jan", 20));
+
     }
 
     private void bindUser(User user) {
