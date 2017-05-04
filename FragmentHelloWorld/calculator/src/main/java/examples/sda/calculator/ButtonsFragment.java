@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+/**
+ * Created by Adrian on 2017-04-25.
+ */
+
 public class ButtonsFragment extends Fragment {
 
     @Override
@@ -16,14 +20,16 @@ public class ButtonsFragment extends Fragment {
 
         final MainActivity mainActivity = (MainActivity) getActivity();
 
+        final View currencyButton = view.findViewById(R.id.currencyCalculatorButton);
         view.findViewById(R.id.investmentButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showInvestmentForm();
+                currencyButton.setEnabled(true);
             }
         });
 
-        view.findViewById(R.id.currencyCalculatorButton).setOnClickListener(new View.OnClickListener() {
+        currencyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.showCurrencyCalculator();
@@ -31,12 +37,13 @@ public class ButtonsFragment extends Fragment {
         });
 
 
-        //view.findViewById(R.id.animationButton).setOnClickListener(new View.OnClickListener() {
-         //   @Override
-          //  public void onClick(View v) {
-           //     mainActivity.showAnimationsExamples();
-           // }
-       // });
+        view.findViewById(R.id.animationButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.showAnimationsExamples();
+                currencyButton.setEnabled(false);
+            }
+        });
 
         return view;
     }
