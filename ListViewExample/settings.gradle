@@ -1,1 +1,1 @@
-include ':app', ':personlist'
+include ':app', ':personlist', ':dbexample'

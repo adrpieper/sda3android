@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DBExample</string>
+    <string name="name">Imię</string>
+    <string name="age">Wiek</string>
+</resources>
