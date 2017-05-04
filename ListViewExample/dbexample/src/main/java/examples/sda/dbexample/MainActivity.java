@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Random;
+
 import examples.sda.dbexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
@@ -22,7 +24,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 user.setName("Adam");
-                binding.invalidateAll();
+                user.setAge(new Random().nextInt(30) + 20);
             }
         });
     }
