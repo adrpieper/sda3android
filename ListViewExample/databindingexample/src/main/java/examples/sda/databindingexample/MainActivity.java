@@ -12,7 +12,8 @@ public class MainActivity extends Activity {
 
     private User user = new User();
     SimpleText text = new SimpleText();
-    private ActivityMainBinding binding;
+    private ActivityMainBinding binding; // creating a connection to be able to use binding
+                                        // access to this class is by changing the layout xml file
 
    /* private TextView name;
     private TextView secName;
@@ -21,7 +22,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main); // use created binding instead of standard
+                                                                                // android "setContentView"
 
         user.setName("Jan");
         user.setSecName("Kowalski");
@@ -37,13 +39,13 @@ public class MainActivity extends Activity {
 
         //bindUser(user);
 
-        binding.setUser(user);
+        binding.setUser(user); // this method "setUser" is available when the building process has succeeded.
         binding.setSomething(text);
 
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                user.setName("Maryjan");
+            public void onClick(View v) { // this is the way to register the name change to a field after
+                user.setName("Maryjan"); // pressing the button
             }
         });
     }
