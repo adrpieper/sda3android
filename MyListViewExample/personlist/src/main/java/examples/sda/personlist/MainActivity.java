@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class MainActivity extends Activity {
+
+    Switch sortSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +28,21 @@ public class MainActivity extends Activity {
         Collections.sort(personArrayList, new Comparator<Person>() {
             @Override
             public int compare(Person p1, Person p2) {
-                return p2.getAge() - p1.getAge();
+                return p1.getAge() - p2.getAge();
             }
         });
 
         ListView pplListView = (ListView) findViewById(R.id.ppl_list_view);
         PeopleAdapter pa = new PeopleAdapter(personArrayList, LayoutInflater.from(this));
         pplListView.setAdapter(pa);
+
+        sortSwitch = (Switch) findViewById(R.id.sort_switch);
+        sortSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     class PeopleAdapter extends BaseAdapter {
