@@ -17,13 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="TextView" />
+        android:text="@{person.name}" />
 
     <TextView
         android:id="@+id/ageTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="TextView" />
+        android:text='@{"age = " + person.age}' />
 </LinearLayout>
 </layout>
