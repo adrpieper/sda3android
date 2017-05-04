@@ -5,6 +5,7 @@
 
     <Button
         android:id="@+id/investmentButton"
+        style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Investment" />
@@ -12,12 +13,15 @@
     <Button
         android:id="@+id/currencyCalculatorButton"
         android:layout_width="match_parent"
+        style="@style/ButtonStyle.MyBigButton"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:text="Currency Calculator" />
 
     <Button
         android:id="@+id/animationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
         android:text="@string/animations_examples" />
 </LinearLayout>

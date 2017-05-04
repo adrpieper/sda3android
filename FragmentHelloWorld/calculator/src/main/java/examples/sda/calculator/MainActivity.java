@@ -15,25 +15,22 @@ public class MainActivity extends Activity {
     }
 
     public void showCurrencyCalculator() {
-
-        //transakcja zbiór kroków które wykonujemy w całości ,do podmiany fragmentu
-
-        final FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new CurrencyCalculatorFragment());
-        transaction.commit();
+        showFragment(new CurrencyCalculatorFragment());
     }
 
     public void showInvestmentForm() {
 
-        final FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new InvestmentFragment());
-        transaction.commit();
+        showFragment(new InvestmentFragment());
     }
 
-
     public void showAnimationsExamples() {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentFrame, new AnimationsFragment());
+        showFragment(new AnimationsFragment());
+    }
+
+    private void showFragment(Fragment fragment) {
+        //transakcja zbiór kroków które wykonujemy w całości ,do podmiany fragmentu
+        final FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentFrame, fragment);
         transaction.commit();
     }
 }

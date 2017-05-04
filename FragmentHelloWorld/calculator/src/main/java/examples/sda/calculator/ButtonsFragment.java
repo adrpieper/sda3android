@@ -9,10 +9,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-/**
- * Created by Adrian on 2017-04-25.
- */
-
 public class ButtonsFragment extends Fragment {
 
     @Override
@@ -46,8 +42,6 @@ public class ButtonsFragment extends Fragment {
                 mainActivity.showAnimationsExamples();
             }
         });
-
-
         return view;
     }
 }

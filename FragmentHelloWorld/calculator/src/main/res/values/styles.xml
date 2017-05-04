@@ -4,5 +4,14 @@
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
+    <style name="ButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+    <style name="ButtonStyle.MyBigButton">
+        <item name="android:height">64dp</item>
+    </style>
 
 </resources>
