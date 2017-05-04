@@ -31,12 +31,12 @@ public class ButtonsFragment extends Fragment {
         });
 
 
-        view.findViewById(R.id.animationButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.showAnimationsExamples();
-            }
-        });
+        //view.findViewById(R.id.animationButton).setOnClickListener(new View.OnClickListener() {
+         //   @Override
+          //  public void onClick(View v) {
+           //     mainActivity.showAnimationsExamples();
+           // }
+       // });
 
         return view;
     }

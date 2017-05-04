@@ -8,11 +8,14 @@
         android:id="@+id/investmentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:text="@string/investment" />
 
     <Button
         android:id="@+id/currencyCalculatorButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorDefault"
         android:text="@string/currency_calculator" />
+
 </LinearLayout>

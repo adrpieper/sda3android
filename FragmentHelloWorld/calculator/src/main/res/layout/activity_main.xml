@@ -7,13 +7,6 @@
     android:orientation="horizontal"
     tools:context="examples.sda.calculator.MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="examples.sda.calculator.ButtonsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="302dp"
-        tools:layout="@layout/fragment_buttons" />
-
     <FrameLayout
         android:id="@+id/fragmentFrame"
         android:layout_width="0dp"
@@ -21,5 +14,12 @@
         android:layout_weight="1">
 
     </FrameLayout>
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="examples.sda.calculator.ButtonsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="302dp"
+        tools:layout="@layout/fragment_buttons" />
 
 </LinearLayout>
