@@ -1,1 +1,1 @@
-include ':app', ':masterdetail', ':calculator', ':resourceexc', ':dagger.example', ':listviewexample'
+include ':app', ':masterdetail', ':calculator', ':resourceexc', ':dagger.example', ':listviewexample', ':databindingexample'
