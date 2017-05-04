@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DataBindingExample</string>
+    <string name="name">Name</string>
+    <string name="secname">SecName</string>
+    <string name="age">Age</string>
+
+
+</resources>
