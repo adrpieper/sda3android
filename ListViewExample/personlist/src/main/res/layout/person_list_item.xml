@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<data>
+    <variable
+        name="person"
+        type="examples.sda.personlist.Person">
+    </variable>
+</data>
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="4dp"
@@ -11,12 +20,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="TextView" />
+        android:text="@{person.name}"
+         />
 
     <TextView
         android:id="@+id/ageTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="TextView" />
+        android:text="@{String.valueOf(person.age)}" />
 </LinearLayout>
+</layout>

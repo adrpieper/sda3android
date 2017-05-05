@@ -1,6 +1,7 @@
 package examples.sda.personlist;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,16 +16,20 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import examples.sda.personlist.databinding.PersonListItemBinding;
+
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         ListView personListView = (ListView) findViewById(R.id.personList);
         Switch sortSwitch = (Switch) findViewById(R.id.sortSwitch);
 
-        PersonProvider personProvider = new PersonFromFileProvider(getResources());
+        PersonProvider personProvider = new PersonProvider();
         final List<Person> personList = personProvider.provide();
 
 
@@ -44,8 +49,6 @@ public class MainActivity extends Activity {
                 personAdapter.notifyDataSetChanged();
             }
         });
-
-
     }
 
     class PersonAdapter extends BaseAdapter {
@@ -75,19 +78,16 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            View personView;
+            PersonListItemBinding binding;
             if (convertView == null) {
-                personView = layoutInflater.inflate(R.layout.person_list_item, parent, false);
+                binding = PersonListItemBinding.inflate(layoutInflater);
+
             }
             else {
-                personView = convertView;
+                binding = DataBindingUtil.getBinding(convertView);
             }
-            TextView nameTextView = (TextView) personView.findViewById(R.id.nameTextView);
-            TextView ageTextView = (TextView) personView.findViewById(R.id.ageTextView);
-            Person person = getItem(position);
-            nameTextView.setText(person.getName());
-            ageTextView.setText(Integer.toString(person.getAge()));
-            return personView;
+            binding.setPerson(getItem(position));
+            return binding.getRoot();
         }
     }
 }
