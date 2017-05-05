@@ -1,4 +1,4 @@
-package examples.mahthart.kursywalut.dummy;
+package examples.mahthart.kursywalut;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class DummyContent {
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static final Map<String, Waluta> ITEM_MAP = new HashMap<String, Waluta>();
 
     static int COUNT = ITEM_MAP.size();
 
@@ -39,13 +39,13 @@ public class DummyContent {
         }
     }
 
-    private static void addItem(DummyItem item) {
+    private static void addItem(Waluta item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.kodWaluty, item);
     }
 
-    private static DummyItem createDummyItem(int position) {
-        return new DummyItem();
+    private static Waluta createDummyItem(int position) {
+        return new Waluta();
     }
 
     private static String makeDetails(int position) {
@@ -60,25 +60,25 @@ public class DummyContent {
     /**
      * A dummy item representing a piece of content.
      */
-    public static class DummyItem extends TabelaWalutXML {
-
-        public String nazwaWaluty;
-        String przelicznikWaluty;
-        String kodWaluty;
-        public String kursWaluty;
-
-//    <nazwa_waluty>dolar Hongkongu</nazwa_waluty>
-//    <przelicznik>1</przelicznik>
-//    <kod_waluty>HKD</kod_waluty>
-//    <kurs_sredni>0,4945</kurs_sredni>
-
-        public DummyItem() {
-
-            this.nazwaWaluty = nazwaWaluty;
-            this.kodWaluty = kodWaluty;
-            this.przelicznikWaluty = przelicznikWaluty;
-            this.kursWaluty = kursWaluty;
-
-        }
-    }
+//    public static class DummyItem extends TabelaWalutXML {
+//
+//        public String nazwaWaluty;
+//        String przelicznikWaluty;
+//        String kodWaluty;
+//        public String kursWaluty;
+//
+////    <nazwa_waluty>dolar Hongkongu</nazwa_waluty>
+////    <przelicznik>1</przelicznik>
+////    <kod_waluty>HKD</kod_waluty>
+////    <kurs_sredni>0,4945</kurs_sredni>
+//
+//        public DummyItem() {
+//
+//            this.nazwaWaluty = nazwaWaluty;
+//            this.kodWaluty = kodWaluty;
+//            this.przelicznikWaluty = przelicznikWaluty;
+//            this.kursWaluty = kursWaluty;
+//
+//        }
+//    }
 }

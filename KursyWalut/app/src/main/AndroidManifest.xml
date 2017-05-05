@@ -28,6 +28,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="examples.mahthart.kursywalut.WalutaListActivity" />
         </activity>
+        <activity android:name=".TabelaWalutXML"></activity>
+
     </application>
 
 </manifest>

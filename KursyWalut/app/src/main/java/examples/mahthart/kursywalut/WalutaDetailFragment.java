@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import examples.mahthart.kursywalut.dummy.DummyContent;
-
 /**
  * A fragment representing a single Waluta detail screen.
  * This fragment is either contained in a {@link WalutaListActivity}
@@ -27,7 +25,7 @@ public class WalutaDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private Waluta mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the

@@ -4,7 +4,7 @@ package examples.mahthart.kursywalut;
  * Created by Medard on 2017-05-05.
  */
 
-public class Waluta {
+public class Waluta extends TabelaWalutXML {
 
     String nazwaWaluty;
     String przelicznikWaluty;
