@@ -29,6 +29,7 @@
                 android:value="examples.mahthart.kursywalut.WalutaListActivity" />
         </activity>
         <activity android:name=".TabelaWalutXML"></activity>
+        <activity android:name=".Waluta"></activity>
 
     </application>
 
