@@ -36,7 +36,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listWalut = null;
-    private String streamFileString = null;
     private InputStream in = null;
     private List <Waluta> walutyLista = null;
     private WalutaAdapter walutaAdapter = null;
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         WebServiceHandler webServiceHandler = new WebServiceHandler();
         webServiceHandler.execute("http://api.nbp.pl/api/exchangerates/tables/a/?format=json");
-        walutaAdapter= new WalutaAdapter(walutyLista, LayoutInflater.from(this));
+        walutaAdapter = new WalutaAdapter(walutyLista, LayoutInflater.from(this));
     }
 
     private class WebServiceHandler extends AsyncTask<String, Void, String> {
@@ -67,17 +66,15 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... urls) {
 
             try {
-                // zakładamy, że jest tylko jeden URL
+                // jest tylko jeden URL
                 URL url = new URL(urls[0]);
                 URLConnection connection = url.openConnection();
 
                 in = new BufferedInputStream(connection.getInputStream());
 
-                streamFileString = in.toString();
-                return streamFileString ;
+                return in.toString();
 
             } catch (Exception e) {
-
                 Log.d(MainActivity.class.getSimpleName(), e.toString());
                 return null;
             }
@@ -85,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
             dialog.dismiss();
             try {
                 readJsonStream(in);
@@ -95,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
             listWalut.setAdapter(walutaAdapter);
         }
-
 
         public List<Waluta> readJsonStream(InputStream is) throws IOException {
             JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
@@ -139,20 +134,21 @@ public class MainActivity extends AppCompatActivity {
     }
     class WalutaAdapter extends BaseAdapter {
         private final LayoutInflater layoutInflater;
+        private final List<Waluta> walytaListek;
 
-        public WalutaAdapter(List<Waluta> walutyLista, LayoutInflater layoutInflater) {
-
+        public WalutaAdapter(List<Waluta> walytaListek, LayoutInflater layoutInflater) {
+            this.walytaListek = walytaListek;
             this.layoutInflater = layoutInflater;
         }
 
         @Override
         public int getCount() {
-            return walutyLista.size();
+            return walytaListek.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return walutyLista.get(position);
+            return walytaListek.get(position);
         }
 
         @Override
