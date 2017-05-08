@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listWalut = (ListView) findViewById(R.id.waluty_lista);
-
         WalutaAdapter walutaAdapter = new WalutaAdapter();
         listWalut.setAdapter(walutaAdapter);
 

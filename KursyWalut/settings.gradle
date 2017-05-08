@@ -1,1 +1,1 @@
-include ':app', ':wzorek', ':testxml', ':testxml', ':useretrofit', ':zdokumentacjiandroid'
+include ':app', ':wzorek', ':testxml', ':testxml', ':useretrofit', ':zdokumentacjiandroid', ':kolejny1'
