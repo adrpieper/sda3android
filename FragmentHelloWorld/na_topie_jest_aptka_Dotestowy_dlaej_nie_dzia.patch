@@ -1,0 +1,509 @@
+Index: KursyWalut/streamingapi/src/main/java/examples/mahthart/streamingapi/Json.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/main/java/examples/mahthart/streamingapi/Json.java	(revision )
++++ KursyWalut/streamingapi/src/main/java/examples/mahthart/streamingapi/Json.java	(revision )
+@@ -0,0 +1,16 @@
++package examples.mahthart.streamingapi;
++
++import android.util.JsonReader;
++
++import java.io.InputStream;
++
++/**
++ * Created by Medard on 2017-05-09.
++ */
++
++class Json {
++    public static JsonReader createReader(InputStream is) {
++        return null;
++    }
++}
++
+Index: KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/DownloadFilesTask.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/DownloadFilesTask.java	(date 1494315448000)
++++ KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/DownloadFilesTask.java	(revision )
+@@ -4,11 +4,9 @@
+ import java.io.BufferedInputStream;
+ import java.io.IOException;
+ import java.io.InputStream;
+-import java.io.UnsupportedEncodingException;
+ import java.net.MalformedURLException;
+ import java.net.URL;
+ import java.net.URLConnection;
+-import java.net.URLEncoder;
+ 
+ /**
+  * Created by Medard on 2017-05-08.
+@@ -16,47 +14,28 @@
+ 
+ public class DownloadFilesTask extends AsyncTask<Void, Void, InputStream> {
+ 
+-    private String noweURLString = null;
+-
+-
+-    public String getNoweURLString() {
+-        return noweURLString;
+-    }
+-
+-    public void setNoweURL(String noweURLString) {
+-        this.noweURLString = noweURLString;
+-    }
+-
+-    public DownloadFilesTask(String noweURL) {
+-        this.noweURLString = noweURLString;
+-    }
+-
+     @Override
+     protected InputStream doInBackground(Void... params) {
+-
++        InputStream inputStreamFile = null;
+-        URL url= null;
++        URL url = null;
+-        URL noweURL =null;
++
+         try {
+-            noweURL = new URL(noweURLString);
++            url = new URL("http://api.nbp.pl/api/exchangerates/tables/a/?format=json");
+         } catch (MalformedURLException e) {
+             e.printStackTrace();
+         }
+-        try {
+-            url = new URL("http://api.nbp.pl");
+-            url.sameFile(noweURL);
+-        } catch (MalformedURLException e) {
+-            e.printStackTrace();
+-        }
+         URLConnection connection = null;
+         try {
+             connection = url.openConnection();
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+-        InputStream inputStreamFile = null;
++
+         try {
+-            inputStreamFile = new BufferedInputStream(connection.getInputStream());
++            inputStreamFile= new BufferedInputStream(connection.getInputStream());
+         } catch (IOException e) {
++            e.printStackTrace();
++        } catch (NullPointerException e){
+             e.printStackTrace();
+         }
+         return inputStreamFile;
+\ No newline at end of file
+Index: KursyWalut/settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/settings.gradle	(date 1494315448000)
++++ KursyWalut/settings.gradle	(revision )
+@@ -1,1 +1,1 @@
+-include ':app', ':wzorek', ':testxml', ':testxml', ':useretrofit', ':zdokumentacjiandroid', ':kolejny1', ':dotestowy'
++include ':app', ':wzorek', ':testxml', ':testxml', ':useretrofit', ':zdokumentacjiandroid', ':kolejny1', ':dotestowy', ':streamingapi'
+Index: KursyWalut/streamingapi/src/androidTest/java/examples/mahthart/streamingapi/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/androidTest/java/examples/mahthart/streamingapi/ExampleInstrumentedTest.java	(revision )
++++ KursyWalut/streamingapi/src/androidTest/java/examples/mahthart/streamingapi/ExampleInstrumentedTest.java	(revision )
+@@ -0,0 +1,26 @@
++package examples.mahthart.streamingapi;
++
++import android.content.Context;
++import android.support.test.InstrumentationRegistry;
++import android.support.test.runner.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumentation test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() throws Exception {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getTargetContext();
++
++        assertEquals("examples.mahthart.streamingapi", appContext.getPackageName());
++    }
++}
+Index: KursyWalut/streamingapi/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/main/res/values/strings.xml	(revision )
++++ KursyWalut/streamingapi/src/main/res/values/strings.xml	(revision )
+@@ -0,0 +1,3 @@
++<resources>
++    <string name="app_name">StreamingAPI</string>
++</resources>
+Index: KursyWalut/dotestowy/src/androidTest/java/examples/mahthart/dotestowy/DownloadFilesTaskTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/dotestowy/src/androidTest/java/examples/mahthart/dotestowy/DownloadFilesTaskTest.java	(revision )
++++ KursyWalut/dotestowy/src/androidTest/java/examples/mahthart/dotestowy/DownloadFilesTaskTest.java	(revision )
+@@ -0,0 +1,26 @@
++package examples.mahthart.dotestowy;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Created by Medard on 2017-05-09.
++ */
++public class DownloadFilesTaskTest {
++    @Test
++    public void getInputStreamFile() throws Exception {
++
++    }
++
++    @Test
++    public void doInBackground() throws Exception {
++
++    }
++
++    @Test
++    public void onPostExecute() throws Exception {
++
++    }
++
++}
+\ No newline at end of file
+Index: KursyWalut/streamingapi/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/main/res/layout/activity_main.xml	(revision )
++++ KursyWalut/streamingapi/src/main/res/layout/activity_main.xml	(revision )
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<android.support.constraint.ConstraintLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="examples.mahthart.streamingapi.MainActivity">
++
++    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
++        android:text="Hello World!" app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++</android.support.constraint.ConstraintLayout>
+Index: KursyWalut/streamingapi/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/.gitignore	(revision )
++++ KursyWalut/streamingapi/.gitignore	(revision )
+@@ -0,0 +1,1 @@
++/build
+Index: KursyWalut/streamingapi/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/build.gradle	(revision )
++++ KursyWalut/streamingapi/build.gradle	(revision )
+@@ -0,0 +1,34 @@
++apply plugin: 'com.android.application'
++
++android {
++    compileSdkVersion 25
++    buildToolsVersion "25.0.3"
++
++    defaultConfig {
++        applicationId "examples.mahthart.streamingapi"
++        minSdkVersion 15
++        targetSdkVersion 25
++        versionCode 1
++        versionName "1.0"
++
++        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
++
++    }
++    buildTypes {
++        release {
++            minifyEnabled false
++            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
++        }
++    }
++}
++
++dependencies {
++    compile fileTree(dir: 'libs', include: ['*.jar'])
++    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
++        exclude group: 'com.android.support', module: 'support-annotations'
++    })
++    compile 'com.android.support:appcompat-v7:25.3.1'
++    compile 'com.android.support.constraint:constraint-layout:1.0.2'
++    testCompile 'junit:junit:4.12'
++    compile 'com.google.code.gson:gson:2.7'
++}
+Index: KursyWalut/dotestowy/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/dotestowy/build.gradle	(date 1494315448000)
++++ KursyWalut/dotestowy/build.gradle	(revision )
+@@ -30,4 +30,5 @@
+     compile 'com.android.support:appcompat-v7:25.3.1'
+     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+     testCompile 'junit:junit:4.12'
++    compile 'com.google.code.gson:gson:2.7'
+ }
+Index: KursyWalut/streamingapi/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/proguard-rules.pro	(revision )
++++ KursyWalut/streamingapi/proguard-rules.pro	(revision )
+@@ -0,0 +1,25 @@
++# Add project specific ProGuard rules here.
++# By default, the flags in this file are appended to flags specified
++# in C:\Users\Medard\AppData\Local\Android\Sdk/tools/proguard/proguard-android.txt
++# You can edit the include path and order by changing the proguardFiles
++# directive in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# Add any project specific keep options here:
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+Index: KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/WalutaProvider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/WalutaProvider.java	(date 1494315448000)
++++ KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/WalutaProvider.java	(revision )
+@@ -13,27 +13,28 @@
+ 
+ public class WalutaProvider {
+ 
+-    private ArrayList<Waluta> walutyLista = null;
+ 
+-    public WalutaProvider(ArrayList<Waluta> walutyLista) {
+-        this.walutyLista = walutyLista;
+-    }
+-    public WalutaProvider(){};
+ 
+-    public ArrayList<Waluta> getWalutyLista() {
++    private List<Waluta> walutyLista;
++
++    public List<Waluta> getWalutyLista() throws IOException {
++        DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
++        downloadFilesTask.execute();
++        readJsonStream(downloadFilesTask.doInBackground());
+         return walutyLista;
+     }
+ 
+     public List<Waluta> readJsonStream(InputStream is) throws IOException {
+-        JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
++
++        JsonReader reader = new JsonReader(new InputStreamReader(is));
+         try {
+-            return getWalutyLista(reader);
++            return provideWalutyLista(reader);
+         } finally {
+             reader.close();
+         }
+     }
+ 
+-    public List<Waluta> getWalutyLista(JsonReader reader) throws IOException {
++    public List<Waluta> provideWalutyLista(JsonReader reader) throws IOException {
+ 
+         walutyLista = new ArrayList<>();
+ 
+\ No newline at end of file
+Index: KursyWalut/streamingapi/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/main/res/values/styles.xml	(revision )
++++ KursyWalut/streamingapi/src/main/res/values/styles.xml	(revision )
+@@ -0,0 +1,11 @@
++<resources>
++
++    <!-- Base application theme. -->
++    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
++        <!-- Customize your theme here. -->
++        <item name="colorPrimary">@color/colorPrimary</item>
++        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
++        <item name="colorAccent">@color/colorAccent</item>
++    </style>
++
++</resources>
+Index: KursyWalut/streamingapi/src/test/java/examples/mahthart/streamingapi/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/test/java/examples/mahthart/streamingapi/ExampleUnitTest.java	(revision )
++++ KursyWalut/streamingapi/src/test/java/examples/mahthart/streamingapi/ExampleUnitTest.java	(revision )
+@@ -0,0 +1,17 @@
++package examples.mahthart.streamingapi;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() throws Exception {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/MainActivity.java	(date 1494315448000)
++++ KursyWalut/dotestowy/src/main/java/examples/mahthart/dotestowy/MainActivity.java	(revision )
+@@ -1,6 +1,5 @@
+ package examples.mahthart.dotestowy;
+ 
+-import android.net.Uri;
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
+ import android.view.LayoutInflater;
+@@ -9,13 +8,9 @@
+ import android.widget.BaseAdapter;
+ import android.widget.ListView;
+ import android.widget.TextView;
+-
+-import java.io.UnsupportedEncodingException;
+-import java.net.URL;
+-import java.net.URLEncoder;
++import java.io.IOException;
+ import java.util.List;
+ 
+-
+ public class MainActivity extends AppCompatActivity {
+ 
+     private ListView listWalut;
+@@ -27,15 +22,16 @@
+ 
+         listWalut = (ListView) findViewById(R.id.waluty_lista);
+ 
+-        String url = "/api/exchangerates/tables/a/?format=json";
+-        DownloadFilesTask downloadFilesTask = new DownloadFilesTask(url);
+-        downloadFilesTask.execute();
+-
+-        WalutaProvider  walutaProvider = new WalutaProvider();
++        WalutaProvider walutaProvider = new WalutaProvider();
+-        final List<Waluta> walutyLista = walutaProvider.getWalutyLista();
++        List<Waluta> walutyLista = null;
++        try {
++            walutyLista = walutaProvider.getWalutyLista();
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
+ 
+-        final WalutaAdapter personAdapter = new WalutaAdapter(walutyLista, LayoutInflater.from(this));
+-        listWalut.setAdapter(personAdapter);
++        final WalutaAdapter walutaAdapter = new WalutaAdapter(walutyLista, LayoutInflater.from(this));
++        listWalut.setAdapter(walutaAdapter);
+     }
+ 
+     class WalutaAdapter extends BaseAdapter {
+@@ -54,7 +50,7 @@
+ 
+         @Override
+         public Object getItem(int position) {
+-            return walutyLista.get(position);
++            return walutyLista.size();
+         }
+ 
+         @Override
+Index: KursyWalut/streamingapi/src/main/java/examples/mahthart/streamingapi/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/main/java/examples/mahthart/streamingapi/MainActivity.java	(revision )
++++ KursyWalut/streamingapi/src/main/java/examples/mahthart/streamingapi/MainActivity.java	(revision )
+@@ -0,0 +1,23 @@
++package examples.mahthart.streamingapi;
++
++import android.support.v7.app.AppCompatActivity;
++import android.os.Bundle;
++import android.util.JsonReader;
++
++import com.google.gson.JsonArray;
++import com.google.gson.JsonObject;
++
++import java.io.IOException;
++import java.io.InputStream;
++import java.net.URL;
++
++public class MainActivity extends AppCompatActivity {
++
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++
++    }
++}
+\ No newline at end of file
+Index: KursyWalut/streamingapi/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- KursyWalut/streamingapi/src/main/res/values/colors.xml	(revision )
++++ KursyWalut/streamingapi/src/main/res/values/colors.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="colorPrimary">#3F51B5</color>
++    <color name="colorPrimaryDark">#303F9F</color>
++    <color name="colorAccent">#FF4081</color>
++</resources>
