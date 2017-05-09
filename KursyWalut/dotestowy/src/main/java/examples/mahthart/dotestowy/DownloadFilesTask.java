@@ -4,11 +4,9 @@ import android.os.AsyncTask;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 
 /**
  * Created by Medard on 2017-05-08.
@@ -16,34 +14,13 @@ import java.net.URLEncoder;
 
 public class DownloadFilesTask extends AsyncTask<Void, Void, InputStream> {
 
-    private String noweURLString = null;
-
-
-    public String getNoweURLString() {
-        return noweURLString;
-    }
-
-    public void setNoweURL(String noweURLString) {
-        this.noweURLString = noweURLString;
-    }
-
-    public DownloadFilesTask(String noweURL) {
-        this.noweURLString = noweURLString;
-    }
-
     @Override
     protected InputStream doInBackground(Void... params) {
+        InputStream inputStreamFile = null;
+        URL url = null;
 
-        URL url= null;
-        URL noweURL =null;
         try {
-            noweURL = new URL(noweURLString);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        try {
-            url = new URL("http://api.nbp.pl");
-            url.sameFile(noweURL);
+            url = new URL("http://api.nbp.pl/api/exchangerates/tables/a/?format=json");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -53,10 +30,12 @@ public class DownloadFilesTask extends AsyncTask<Void, Void, InputStream> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        InputStream inputStreamFile = null;
+
         try {
-            inputStreamFile = new BufferedInputStream(connection.getInputStream());
+            inputStreamFile= new BufferedInputStream(connection.getInputStream());
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e){
             e.printStackTrace();
         }
         return inputStreamFile;

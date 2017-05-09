@@ -1,6 +1,5 @@
 package examples.mahthart.dotestowy;
 
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,12 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLEncoder;
+import java.io.IOException;
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,15 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
         listWalut = (ListView) findViewById(R.id.waluty_lista);
 
-        String url = "/api/exchangerates/tables/a/?format=json";
-        DownloadFilesTask downloadFilesTask = new DownloadFilesTask(url);
-        downloadFilesTask.execute();
+        WalutaProvider walutaProvider = new WalutaProvider();
+        List<Waluta> walutyLista = null;
+        try {
+            walutyLista = walutaProvider.getWalutyLista();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        WalutaProvider  walutaProvider = new WalutaProvider();
-        final List<Waluta> walutyLista = walutaProvider.getWalutyLista();
-
-        final WalutaAdapter personAdapter = new WalutaAdapter(walutyLista, LayoutInflater.from(this));
-        listWalut.setAdapter(personAdapter);
+        final WalutaAdapter walutaAdapter = new WalutaAdapter(walutyLista, LayoutInflater.from(this));
+        listWalut.setAdapter(walutaAdapter);
     }
 
     class WalutaAdapter extends BaseAdapter {
@@ -54,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
-            return walutyLista.get(position);
+            return walutyLista.size();
         }
 
         @Override

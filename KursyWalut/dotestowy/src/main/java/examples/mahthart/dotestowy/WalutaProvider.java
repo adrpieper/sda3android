@@ -13,27 +13,28 @@ import java.util.List;
 
 public class WalutaProvider {
 
-    private ArrayList<Waluta> walutyLista = null;
 
-    public WalutaProvider(ArrayList<Waluta> walutyLista) {
-        this.walutyLista = walutyLista;
-    }
-    public WalutaProvider(){};
 
-    public ArrayList<Waluta> getWalutyLista() {
+    private List<Waluta> walutyLista;
+
+    public List<Waluta> getWalutyLista() throws IOException {
+        DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
+        downloadFilesTask.execute();
+        readJsonStream(downloadFilesTask.doInBackground());
         return walutyLista;
     }
 
     public List<Waluta> readJsonStream(InputStream is) throws IOException {
-        JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
+
+        JsonReader reader = new JsonReader(new InputStreamReader(is));
         try {
-            return getWalutyLista(reader);
+            return provideWalutyLista(reader);
         } finally {
             reader.close();
         }
     }
 
-    public List<Waluta> getWalutyLista(JsonReader reader) throws IOException {
+    public List<Waluta> provideWalutyLista(JsonReader reader) throws IOException {
 
         walutyLista = new ArrayList<>();
 
