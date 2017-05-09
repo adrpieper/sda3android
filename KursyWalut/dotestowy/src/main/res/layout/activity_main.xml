@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="examples.mahthart.dotestowy.MainActivity">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" tools:context="examples.mahthart.dotestowy.DataListFragment"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.android.com/tools
+">
 
     <ListView
-        android:id="@+id/waluty_lista"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:id="@+id/waluty_lista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 </LinearLayout>

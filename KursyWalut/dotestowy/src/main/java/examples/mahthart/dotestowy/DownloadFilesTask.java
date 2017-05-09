@@ -1,24 +1,25 @@
 package examples.mahthart.dotestowy;
 
 import android.os.AsyncTask;
-import java.io.BufferedInputStream;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 /**
  * Created by Medard on 2017-05-08.
  */
 
-public class DownloadFilesTask extends AsyncTask<Void, Void, InputStream> {
+public class DownloadFilesTask extends AsyncTask<Object, Object, JSONArray> {
 
     @Override
-    protected InputStream doInBackground(Void... params) {
-        InputStream inputStreamFile = null;
+    protected JSONArray doInBackground(Object... params) {
         URL url = null;
-
+        JSONArray jsonArray = null;
         try {
             url = new URL("http://api.nbp.pl/api/exchangerates/tables/a/?format=json");
         } catch (MalformedURLException e) {
@@ -30,15 +31,17 @@ public class DownloadFilesTask extends AsyncTask<Void, Void, InputStream> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         try {
-            inputStreamFile= new BufferedInputStream(connection.getInputStream());
+            jsonArray = new JSONArray(connection.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (NullPointerException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
-        return inputStreamFile;
+        return jsonArray;
+    }
+
+    protected void onPostExecute(JSONArray result) {
     }
 }
 // https://developer.android.com/reference/android/os/AsyncTask.html#doInBackground(Params...)

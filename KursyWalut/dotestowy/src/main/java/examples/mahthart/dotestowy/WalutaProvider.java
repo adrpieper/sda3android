@@ -20,7 +20,6 @@ public class WalutaProvider {
     public List<Waluta> getWalutyLista() throws IOException {
         DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
         downloadFilesTask.execute();
-        readJsonStream(downloadFilesTask.doInBackground());
         return walutyLista;
     }
 
