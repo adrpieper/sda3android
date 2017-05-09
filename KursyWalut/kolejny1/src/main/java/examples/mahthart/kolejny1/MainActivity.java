@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listWalut = (ListView) findViewById(R.id.waluty_lista);
 
+
         WebServiceHandler webServiceHandler = new WebServiceHandler();
         webServiceHandler.execute("http://api.nbp.pl/api/exchangerates/tables/a/?format=json");
         walutaAdapter = new WalutaAdapter(walutyLista, LayoutInflater.from(this));
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... urls) {
 
             try {
-                // jest tylko jeden URL
                 URL url = new URL(urls[0]);
                 URLConnection connection = url.openConnection();
 
